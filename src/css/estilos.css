@@ -1,0 +1,97 @@
+.sobre {
+    position: relative;
+  }
+  
+  #imagem {
+    position: absolute;
+    width: 100%;
+  }
+  
+  #texto {
+    position: absolute;
+    font-size: 32px;
+    left: 250px;
+    top: 135px;
+  }
+
+  img{
+      width: 100%;
+      display: block;
+  }
+
+  .sobre img{
+    width: 70px; 
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    margin-left: 90px;
+}
+.avaliacoes img{ 
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+}
+
+.avaliacoes{
+    background-color: aquamarine;
+}
+
+
+.logos {
+    display: flex;
+    width: 220px;
+}
+
+
+
+.footer{
+    background-color:dimgray;
+    padding: 20px;
+}
+
+.footer .logo{
+    width: 100px;
+}
+
+li{
+    list-style-type: none;
+}
+
+section a{
+    color: white;
+}
+
+section ul{
+    padding: 20px;
+    margin-right: 100px;
+}
+.sociais{
+    display: flex;
+    width: 150px;
+}
+
+section .footer h6{
+    color: white;
+    padding: 20px;
+}
+
+section nav{
+    background-color: dimgray;
+}
+
+main{
+    margin-top: 90px;
+}
+
+section nav button{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+nav .menu{
+    text-align: center;
+}
+
+nav .menu-responsivo{
+    margin-right: 20px;
+}
