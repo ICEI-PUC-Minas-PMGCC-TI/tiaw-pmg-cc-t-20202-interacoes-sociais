@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro do psicólogo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+                <div class="modal-body">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" method="post" onsubmit="loginUser (this)"></form>
+                        <h3 class="text-center text-info">Novo usuário</h3>
+                        <div class="form-group">
+                            <label for="nome" class="text-info">Nome </label><br>
+                            <input type="text" name="txt_nome" id="txt_nome" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nome" class="text-info">Sobrenome </label><br>
+                            <input type="text" name="txt_sobrenome" id="txt_sobrenome" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-info">Número do cadastro ao CRP </label>
+                            <input type="text" name="txt_crp" id="txt_crp" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="genre" class="text-info">Gênero</label>
+                            <select id="select_genre" name="user_state" class="form-control">
+                                <option value="" disabled selected>Escolher opção</option>
+                                <option value="F">Feminino</option>
+                                <option value="M">Masculino</option>
+                                <option value="O">Outros</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date" class="text-info">Data de Nascimento</label>
+                            <input type="date" id="birth_date" name="user_birth" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="text-info"> Celular ou telefone pra contato </label>
+                            <input type="text" name="txt_phone" id="txt_phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="text-info"> CEP </label>
+                            <input type="text" name="txt_cep" id="txt_cep" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-info">Em média qual o valor da sua consulta? </label>
+                            <select id="select_preco" name="user_state" class="form-control">
+                                <option value="" disabled selected>Escolher opção</option>
+                                <option value="gratuito">Gratuito</option>
+                                <option value="ate 50 reais">Até 50 reais</option>
+                                <option value="ate 100 reais">Até 100 reais</option>
+                                <option value="mais de 100 reais">Mais de 100 reais</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="senha2" class="text-info">Fale um pouco mais sobre seu trabalho</label><br>
+                            <textarea  id="txt_about" name="user_message" rows="10" cols="50" class="form-control"
+                                placeholder="Conte um pouco mais sobre suas experiências e como poderia auxiliar quem lhe procura."></textarea >
+                        </div>
+                        <div class="form-group">
+                            <label for="login" class="text-info">Usuário</label><br>
+                            <input type="text" name="txt_login" id="txt_login" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="text-info">Email</label><br>
+                            <input type="text" name="txt_email" id="txt_email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha" class="text-info">Senha</label><br>
+                            <input type="password" name="txt_senha" id="txt_senha" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha2" class="text-info">Confirmação de Senha</label><br>
+                            <input type="password" name="txt_senha2" id="txt_senha2" class="form-control">
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" id="btn_salvar" class="btn btn-info">Cadastrar</button>
+                </div>
+            </div>
+        </div>
+
+    <script src="scripts/cadastro_psicologos.js"></script>
+    <script>
+
+        function salvaLogin(event) {
+            // Cancela a submissão do formulário para tratar sem fazer refresh da tela
+            event.preventDefault();
+
+            // Obtem os dados do formulário
+            let login = document.getElementById('txt_login').value;
+            let nome = document.getElementById('txt_nome').value;
+            let sobrenome = document.getElementById('txt_sobrenome').value;
+            let email = document.getElementById('txt_email').value;
+            let senha = document.getElementById('txt_senha').value;
+            let senha2 = document.getElementById('txt_senha2').value;
+            let preco = document.getElementById('select_preco').value;
+            let crp = document.getElementById('txt_crp').value;
+            let genre = document.getElementById('select_genre').value;
+            let date = document.getElementById('birth_date').value;
+            let phone = document.getElementById('txt_phone').value;
+            let cep = document.getElementById('txt_cep').value;
+            let about = document.getElementById('txt_about').value;
+
+            if (senha != senha2) {
+                alert('As senhas informadas não conferem.');
+                return
+            }
+
+            // Adiciona o usuário no banco de dados
+
+            addUser(nome, sobrenome, login, senha, email, preco, crp, genre, date, phone, cep, about);
+            alert('Usuário salvo com sucesso. Proceda com o login para ');
+        }
+
+        // Associar salvamento ao botao
+        document.getElementById('btn_salvar').addEventListener('click', salvaLogin);
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
