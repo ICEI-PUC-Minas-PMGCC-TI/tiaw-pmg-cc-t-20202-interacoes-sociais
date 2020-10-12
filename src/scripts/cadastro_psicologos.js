@@ -66,7 +66,7 @@ function initLoginApp () {
     
     // PARTE 2 - INICIALIZA BANCO DE DADOS DE USUÁRIOS
     // Obtem a string JSON com os dados de usuários a partir do localStorage
-    var usuariosJSON = localStorage.getItem('db_usuarios');
+    var usuariosJSON = localStorage.getItem('db_usuariospsico');
 
     // Verifica se existem dados já armazenados no localStorage
     if (!usuariosJSON) {  // Se NÃO há dados no localStorage
@@ -78,7 +78,7 @@ function initLoginApp () {
         db_usuariospsico = dadosIniciais;
 
         // Salva os dados iniciais no local Storage convertendo-os para string antes
-        localStorage.setItem('db_usuarios', JSON.stringify (dadosIniciais));
+        localStorage.setItem('db_usuariospsico', JSON.stringify (dadosIniciais));
     }
     else  {  // Se há dados no localStorage
         
@@ -110,7 +110,7 @@ function addUser (nome, sobrenome, login, senha, email, preco, crp, genre, date,
     db_usuariospsico.usuarios.push (usuario);
 
     // Salva o novo banco de dados com o novo usuário no localStorage
-    localStorage.setItem('db_usuarios', JSON.stringify (db_usuarios));
+    localStorage.setItem('db_usuariospsico', JSON.stringify (db_usuariospsico));
 }
 
 // Inicializa as estruturas utilizadas pelo LoginApp
