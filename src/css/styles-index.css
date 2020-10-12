@@ -33,13 +33,13 @@
 }
 
 .avaliacoes{
-    background-color: aquamarine;
+    background-color: dimgray;
 }
 
 
 .logos {
     display: flex;
-    width: 220px;
+    width: 380px;
 }
 
 
@@ -53,7 +53,7 @@
     width: 100px;
 }
 
-li{
+.footer li{
     list-style-type: none;
 }
 
@@ -61,7 +61,7 @@ section a{
     color: white;
 }
 
-section ul{
+.footer ul{
     padding: 20px;
     margin-right: 100px;
 }
@@ -94,4 +94,68 @@ nav .menu{
 
 nav .menu-responsivo{
     margin-right: 20px;
+}
+
+.sobre {
+    background-color: lightgrey;
+    padding: 40px;
+}
+
+.titulo-sobre{
+    margin-top: 100px;
+}
+
+section .card{
+    border-radius: 20px;
+    background-color: gainsboro;
+}
+
+.parcerias{
+    margin-top: 100px;
+}
+
+section .imagem-card{
+    float: left;
+}
+
+section .texto-card{
+    float: right;
+}
+
+.avaliacoes{
+    padding: 30px;
+}
+
+.titulo-avaliacao{
+    margin-top: 100px;
+}
+
+.sobre-nos ul {
+    list-style-image: url('../imagens/aluno.png');
+  }
+
+.list-sobre li {
+    list-style-image: url('../imagens/sobre.png');
+}
+
+.sobre-nos{
+    padding: 30px;
+    margin-top: 100px;
+}
+
+.inicio{
+    background-color: dimgray;
+    padding: 150px;
+}
+
+.ingressar{
+    margin-top: 20px;
+}
+
+.inicio .card{
+    background-color: #4F4F4F;
+}
+
+ .inicio p,h3{
+    color: white;
 }
