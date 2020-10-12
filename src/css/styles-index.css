@@ -79,12 +79,6 @@ section nav{
     background-color: dimgray;
 }
 
-
-section nav button{
-    margin-top: 20px;
-    margin-left: 20px;
-}
-
 nav .menu{
     text-align: center;
 }
@@ -180,9 +174,9 @@ section .texto-card{
     color: black;
     padding: 20px;
 }
-
-.card{
-    margin-left: 20px;
+.modal button{
+    margin-bottom: 20px;
+    margin-right: 20px !important;
 }
 @media screen and (max-width: 767px){
         .logo-footer{

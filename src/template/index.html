@@ -42,10 +42,9 @@
           </li>
         </ul>
         <div class="col-12 col-sm-4 col-md-4 col-lg-4">
-          <a href="cadastro-usuario.html" target="_blank">
-            <button type="button" class="btn btn-primary">Ingressar</button>
-          </a>
-          <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
+          <button type="button" class="btn btn-primary" data-toggle="modal"
+            data-target="#ModalIngressar">Ingressar</button>
+          <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#ModalEntrar">
             Entrar
           </button>
         </div>
@@ -159,7 +158,7 @@
         <h2 id="avaliacoes" class="titulo-avaliacao col-12 col-sm-12 col-md-12 col-lg-12">Avaliações</h2>
       </div>
     </div>
-    
+
     <section class="avaliacoes">
       <div class="container">
         <div class="row">
@@ -215,7 +214,7 @@
       </div>
     </section>
 
-   
+
     <section class="sobre-nos">
       <div class="container">
         <div class="row">
@@ -317,8 +316,36 @@
       </div>
     </section>
   </footer>
+  <div class="modal fade " id="ModalIngressar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-primary">
+            <h5 class="modal-title" id="exampleModalLabel">Ingressar</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="card">
+              <div class="card-body">
+                <img src="../imagens/ingressar.png" alt="">
+                <a href="./cadastro-usuario.html">
+                  <button type="button" class="btn btn-primary col-12 col-sm-12 col-md-12 col-lg-12">Ingressar como paciente</button>
+                </a>
+                <a href="./cadastro-psicologo.html">
+                  <button type="button" class="btn btn-primary col-12 col-sm-12 col-md-12 col-lg-12">Ingressar como psicólogo</button>
+                </a>
+                <a href="#" class="col-12 col-sm-12 col-md-12 col-lg-12">Entrar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   <form>
-    <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade " id="ModalEntrar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -328,7 +355,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          
+
           <div class="modal-body">
             <div class="card">
               <div class="card-body">
@@ -337,7 +364,8 @@
                   <input type="text" id="email" class="form-control" name="user_email" placeholder="E-mail" required>
                 </div>
                 <div class="form-group dado_pessoal">
-                  <input type="password" id="senha" class="form-control" name="user_senha" placeholder="********" required>
+                  <input type="password" id="senha" class="form-control" name="user_senha" placeholder="********"
+                    required>
                 </div>
                 <button type="button" class="btn btn-primary col-12 col-sm-12 col-md-12 col-lg-12">Logar</button>
                 <a href="#" class="col-12 col-sm-12 col-md-12 col-lg-12">Esqueceu sua senha?</a><br>
