@@ -60,7 +60,7 @@
     <section class="inicio">
       <div class="container">
         <div class="row">
-          <div class="card col-8 col-sm-8 col-md-8 col-lg-8">
+          <div class="card col-12 col-sm-12 col-md-8 col-lg-8">
             <div class="card-body">
               <h3>Um site para conectar pacientes e psicólogos</h3>
               <p>A melhor solução para pessoas com pânico social</p>
@@ -159,11 +159,11 @@
         <h2 id="avaliacoes" class="titulo-avaliacao col-12 col-sm-12 col-md-12 col-lg-12">Avaliações</h2>
       </div>
     </div>
+    
     <section class="avaliacoes">
       <div class="container">
         <div class="row">
-
-          <div class="cardd card col-12 col-sm-12 col-md-4 col-lg-4">
+          <div class=" card col-12 col-sm-12 col-md-4 col-lg-4">
             <div class="card-body ">
               <div class="imagem-card col-4 col-sm-4 col-md-4 col-lg-4">
                 <img src="../imagens/usuario1.jpg" alt="">
@@ -179,7 +179,7 @@
               </div>
             </div>
           </div>
-          <div class="cardd card col-12 col-sm-12 col-md-4 col-lg-4">
+          <div class=" card col-12 col-sm-12 col-md-4 col-lg-4">
             <div class="card-body ">
               <div class="imagem-card col-4 col-sm-4 col-md-4 col-lg-4">
                 <img src="../imagens/usuario1.jpg" alt="">
@@ -227,13 +227,13 @@
             </div>
             <div class="card">
               <div class="card-body">
-                <div class="imagem-card col-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="imagem-card col-12 col-sm-12 col-md-6 col-lg-6">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, nesciunt eaque perspiciatis sint
                   nostrum amet mollitia fuga minus aperiam molestiae quos cumque harum nulla totam odio. Ex totam vero,
                   deserunt sed quaerat maxime autem doloribus magni, cumque dolorum pariatur fugit voluptas omnis? Nam
                   facilis, maxime sunt dolores libero earum nisi.
                 </div>
-                <div class="texto-card col-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="texto-card col-12 col-sm-12 col-md-6 col-lg-6">
                   <ul>
                     <li>Professor</li>
                     <li>Aluno</li>
@@ -276,10 +276,10 @@
   <footer class="footer">
     <section class="container">
       <div class="row footer">
-        <div class="col-3 col-sm-3 col-md-3 col-lg-3">
+        <div class="logo-footer col-1 col-sm-1 col-md-3 col-lg-3">
           <img src="../imagens/usuario1.jpg" class="logo">
         </div>
-        <div class="col-5 col-sm-5 col-md-5 col-lg-5">
+        <div class="menu-footer col-7 col-sm-8 col-md-5 col-lg-5">
           <ul>
             <li>
               <a href="#sobre">Sobre o Site</a>
@@ -298,7 +298,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+        <div class="sociais-tudo col-5 col-sm-4 col-md-4 col-lg-4">
           <h6>Nossas Redes:</h6>
           <div class="sociais">
             <div class=" col-4 col-sm-4 col-md-3 col-lg-4">
@@ -322,30 +322,28 @@
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header bg-primary">
             <h5 class="modal-title" id="exampleModalLabel">Login</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+          
           <div class="modal-body">
-            <div class="form-group dado_pessoal">
-              <label for="email">
-                <span>Email</span>
-              </label>
-              <input type="text" id="email" class="form-control" name="user_email" placeholder="Obrigatório" required>
+            <div class="card">
+              <div class="card-body">
+                <img src="../imagens/usario2.jpg" alt="">
+                <div class="form-group dado_pessoal">
+                  <input type="text" id="email" class="form-control" name="user_email" placeholder="E-mail" required>
+                </div>
+                <div class="form-group dado_pessoal">
+                  <input type="password" id="senha" class="form-control" name="user_senha" placeholder="********" required>
+                </div>
+                <button type="button" class="btn btn-primary col-12 col-sm-12 col-md-12 col-lg-12">Logar</button>
+                <a href="#" class="col-12 col-sm-12 col-md-12 col-lg-12">Esqueceu sua senha?</a><br>
+                <a href="#" class="col-12 col-sm-12 col-md-12 col-lg-12">Criar uma nova conta</a>
+              </div>
             </div>
-            <div class="form-group dado_pessoal">
-              <label for="senha">
-                <span>Senha</span>
-              </label>
-              <input type="password" id="senha" class="form-control" name="user_senha" placeholder="********" required>
-            </div>
-            <a href="#">Esqueceu sua senha?</a>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary">Logar</button>
           </div>
         </div>
       </div>

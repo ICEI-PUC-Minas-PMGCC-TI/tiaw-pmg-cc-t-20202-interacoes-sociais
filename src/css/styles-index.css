@@ -79,9 +79,6 @@ section nav{
     background-color: dimgray;
 }
 
-main{
-    margin-top: 90px;
-}
 
 section nav button{
     margin-top: 20px;
@@ -158,4 +155,50 @@ section .texto-card{
 
  .inicio p,h3{
     color: white;
+}
+
+.modal .card{
+    border-radius: 20px;
+    background-color: gainsboro;
+    text-align: center;
+}
+.modal img{
+    width: 70px; 
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    margin-left: 175px;
+    margin-bottom: 20px;
+}
+
+.modal h5{
+    color: white;
+}
+
+.modal a{
+    margin-top: 20px;
+    color: black;
+    padding: 20px;
+}
+
+.card{
+    margin-left: 20px;
+}
+@media screen and (max-width: 767px){
+        .logo-footer{
+            display: none;
+        }
+        .logos {
+            display: flex;
+            width: 280px;
+        }
+        .inicio{
+            padding: 50px;
+        }
+        .card{
+            margin-bottom: 20px;
+        }
+        .imagem-card{
+            margin-bottom: 40px;
+        }
 }
