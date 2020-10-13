@@ -73,7 +73,7 @@
                         </div>
                         <div class="form-group">
                             <label for="email" class="text-info">Email</label><br>
-                            <input type="text" name="txt_email" id="txt_email" class="form-control">
+                            <input type="email" name="txt_email" id="txt_email" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="senha" class="text-info">Senha</label><br>
@@ -88,47 +88,13 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" id="btn_salvar" class="btn btn-info">Cadastrar</button>
+                    <button type="submit" id="btn_salvar" class="btn btn-info">Cadastrar</button>
                 </div>
             </div>
         </div>
 
     <script src="../scripts/cadastro_paciente.js"></script>
-    <script>
-
-        function salvaLogin(event) {
-            // Cancela a submissão do formulário para tratar sem fazer refresh da tela
-            event.preventDefault();
-
-            // Obtem os dados do formulário
-            let login = document.getElementById('txt_login').value;
-            let nome = document.getElementById('txt_nome').value;
-            let sobrenome = document.getElementById('txt_sobrenome').value;
-            let email = document.getElementById('txt_email').value;
-            let senha = document.getElementById('txt_senha').value;
-            let senha2 = document.getElementById('txt_senha2').value;
-            let valor = document.getElementById('select_valor').value;
-            let anonimo = document.getElementById('select_anonimo').value;
-            let genre = document.getElementById('select_genre').value;
-            let date = document.getElementById('birth_date').value;
-            let phone = document.getElementById('txt_phone').value;
-            let cep = document.getElementById('txt_cep').value;
-            let about = document.getElementById('txt_about').value;
-
-            if (senha != senha2) {
-                alert('As senhas informadas não conferem.');
-                return
-            }
-
-            // Adiciona o usuário no banco de dados
-
-            addUser(nome, sobrenome, login, senha, email, valor, anonimo, genre, date, phone, cep, about);
-            alert('Usuário salvo com sucesso. Proceda com o login para ');
-        }
-
-        // Associar salvamento ao botao
-        document.getElementById('btn_salvar').addEventListener('click', salvaLogin);
-    </script>
+    
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
