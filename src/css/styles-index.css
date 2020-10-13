@@ -49,9 +49,6 @@
     padding: 20px;
 }
 
-.footer .logo{
-    width: 100px;
-}
 
 .footer li{
     list-style-type: none;
@@ -109,8 +106,9 @@ section .imagem-card{
     float: left;
 }
 
-section .texto-card{
-    float: right;
+.texto-card{
+    
+    margin-left: 30%;
 }
 
 .avaliacoes{
@@ -121,18 +119,16 @@ section .texto-card{
     margin-top: 100px;
 }
 
-.sobre-nos ul {
+.lista img{
+    width: 28px;
+    height: 28px;
+}
+
+.lista ul{
     list-style-image: url('../imagens/aluno.png');
-  }
-
-.list-sobre li {
-    list-style-image: url('../imagens/sobre.png');
 }
 
-.sobre-nos{
-    padding: 30px;
-    margin-top: 100px;
-}
+
 
 .inicio{
     background-color: dimgray;
@@ -161,8 +157,7 @@ section .texto-card{
     border-radius:50%;
     -moz-border-radius:50%;
     -webkit-border-radius:50%;
-    margin-left: 175px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
 }
 
 .modal h5{
@@ -176,8 +171,43 @@ section .texto-card{
 }
 .modal button{
     margin-bottom: 20px;
-    margin-right: 20px !important;
 }
+
+.btn_ingressar{
+    margin-left: 5%;
+    width: 70%;
+}
+
+.modal h6{
+    margin: 0 auto;
+}
+
+.imagem-card {
+    width: 64px;
+    height: 64px;
+}
+
+.sociais-img img{
+    width: 56px;
+    height: 56px;
+}
+
+.sobre-nos{
+    background-color: lightgray;
+    padding: 20px;
+    border-radius: 3%;
+}
+
+.sobre-contatos{
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.logo{
+    width: 40%;
+}
+
+
 @media screen and (max-width: 767px){
         .logo-footer{
             display: none;
@@ -187,6 +217,7 @@ section .texto-card{
             width: 280px;
         }
         .inicio{
+            margin-top: 5%;
             padding: 50px;
         }
         .card{
@@ -194,5 +225,8 @@ section .texto-card{
         }
         .imagem-card{
             margin-bottom: 40px;
+        }
+        .logo{
+            width: 70%;
         }
 }
