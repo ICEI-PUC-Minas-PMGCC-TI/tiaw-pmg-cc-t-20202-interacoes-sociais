@@ -88,8 +88,7 @@ function salvaLogin(event) {
         alert("Email invalido");
         return
     }
-    else if (!isEmail(emailValue))
-    {
+    else if (!isEmail(emailValue)) {
         alert("Email escrito errado");
         return
     }
@@ -97,7 +96,7 @@ function salvaLogin(event) {
     if (senhaValue.length < 5) {
         alert("Senha invalida");
         return
-    } 
+    }
 
     if (senhaValue != senha2Value) {
         alert('As senhas informadas não conferem.');
@@ -106,7 +105,7 @@ function salvaLogin(event) {
 
     // Adiciona o usuário no banco de dados
 
-    addUser(nome, sobrenome, login, senha, email, valor, anonimo, genre, date, phone, cep, about);
+    addUser(nomeValue, sobrenomeValue, loginValue, senhaValue, emailValue, valorValue, anonimoValue, genreValue, dateValue, phoneValue, cepValue, aboutValue);
     alert('Usuário salvo com sucesso.');
 }
 
@@ -200,24 +199,24 @@ function initLoginApp() {
     }
 };
 
-function addUser(nome, sobrenome, login, senha, email, valor, anonimo, genre, date, phone, cep, about) {
+function addUser(nomeValue, sobrenomeValue, loginValue, senhaValue, emailValue, valorValue, anonimoValue, genreValue, dateValue, phoneValue, cepValue, aboutValue) {
 
     // Cria um objeto de usuario para o novo usuario 
     let newId = generateUUID();
     let usuario = {
         "id": newId,
-        "login": login,
-        "senha": senha,
-        "nome": nome,
-        "sobrenome": sobrenome,
-        "email": email,
-        "valor": valor,
-        "anonimo": anonimo,
-        "genero": genre,
-        "data": date,
-        "telefone": phone,
-        "cep": cep,
-        "sobre": about
+        "login": loginValue,
+        "senha": senhaValue,
+        "nome": nomeValue,
+        "sobrenome": sobrenomeValue,
+        "email": emailValue,
+        "valor": valorValue,
+        "anonimo": anonimoValue,
+        "genero": genreValue,
+        "data": dateValue,
+        "telefone": phoneValue,
+        "cep": cepValue,
+        "sobre": aboutValue
     };
 
     // Inclui o novo usuario no banco de dados baseado em JSON
