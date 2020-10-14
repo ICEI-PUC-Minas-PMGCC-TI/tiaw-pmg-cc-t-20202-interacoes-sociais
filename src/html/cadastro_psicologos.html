@@ -59,8 +59,13 @@
                         </div>
                         <div class="form-group">
                             <label for="senha2" class="text-info">Fale um pouco mais sobre seu trabalho</label><br>
-                            <textarea  id="txt_about" name="user_message" rows="10" cols="50" class="form-control"
+                            <textarea  id="txt_aboutjob" name="user_message" rows="10" cols="50" class="form-control"
                                 placeholder="Conte um pouco mais sobre suas experiências e como poderia auxiliar quem lhe procura."></textarea >
+                        </div>
+                        <div class="form-group">
+                            <label for="senha2" class="text-info">Fale um pouco mais sobre você</label><br>
+                            <textarea  id="txt_about" name="user_message" rows="10" cols="50" class="form-control"
+                                placeholder="Conte um pouco mais sobre você que pode ser interessante do paciente saber. Algumas características, opiniões, preferências, etc."></textarea >
                         </div>
                         <div class="form-group">
                             <label for="login" class="text-info">Usuário</label><br>
@@ -89,42 +94,6 @@
         </div>
 
     <script src="../scripts/cadastro_psicologos.js"></script>
-    <script>
-
-        function salvaLogin(event) {
-            // Cancela a submissão do formulário para tratar sem fazer refresh da tela
-            event.preventDefault();
-
-            // Obtem os dados do formulário
-            let login = document.getElementById('txt_login').value;
-            let nome = document.getElementById('txt_nome').value;
-            let sobrenome = document.getElementById('txt_sobrenome').value;
-            let email = document.getElementById('txt_email').value;
-            let senha = document.getElementById('txt_senha').value;
-            let senha2 = document.getElementById('txt_senha2').value;
-            let preco = document.getElementById('select_preco').value;
-            let crp = document.getElementById('txt_crp').value;
-            let genre = document.getElementById('select_genre').value;
-            let date = document.getElementById('birth_date').value;
-            let phone = document.getElementById('txt_phone').value;
-            let cep = document.getElementById('txt_cep').value;
-            let about = document.getElementById('txt_about').value;
-
-            if (senha != senha2) {
-                alert('As senhas informadas não conferem.');
-                return
-            }
-
-            // Adiciona o usuário no banco de dados
-
-            addUser(nome, sobrenome, login, senha, email, preco, crp, genre, date, phone, cep, about);
-            alert('Usuário salvo com sucesso. Proceda com o login para ');
-        }
-
-        // Associar salvamento ao botao
-        document.getElementById('btn_salvar').addEventListener('click', salvaLogin);
-    </script>
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
