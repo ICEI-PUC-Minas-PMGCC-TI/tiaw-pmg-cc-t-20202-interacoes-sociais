@@ -147,23 +147,137 @@ function generateUUID() { // Public Domain/MIT
 
 // Dados de usuários para serem utilizados como carga inicial
 const db_contatos_inicial = {
-    usuarios: [
+    "data": [
         {
-            "id": generateUUID(),
-            "login": "admin",
-            "senha": "123",
-            "nome": "Administrador do Sistema",
-            "sobrenome": "",
-            "email": "admin@abc.com",
-            "valor": "",
-            "anonimo": "",
-            "genero": "",
-            "data": "",
-            "telefone": "",
-            "cep": "",
-            "sobre": ""
+            "id": 1,
+            "nome": "Leanne",
+            "sobrenome": "Graham",
+            "cep": "51346587",
+            "anonimato": "Sim",
+            "email": "Sincere@april.biz",
+            "celular": "1-770-736-8031",
+            "sobre": "hildegard.org",
+            "valor": "gratuito",
+            "senha": "Leanne",
+            "status": ""
         },
-        { "id": generateUUID(), "login": "user", "senha": "123", "nome": "Usuario Comum", "email": "user@abc.com" },
+        {
+            "id": 2,
+            "nome": "Ervin",
+            "sobrenome": "Howell",
+            "cep": "13468572",
+            "anonimato": "Não",
+            "email": "Shanna@melissa.tv",
+            "celular": "010-692-6593",
+            "sobre": "anastasia.net",
+            "valor": "gratuito",
+            "senha": "Ervin",
+            "status": ""
+        },
+        {
+            "id": 3,
+            "nome": "Clementine",
+            "sobrenome": "Bauch",
+            "cep": "12345678",
+            "anonimato": "Não",
+            "email": "Nathan@yesenia.net",
+            "celular": "1-463-123-4447",
+            "sobre": "ramiro.info",
+            "valor": "gratuito",
+            "senha": "Clementine",
+            "status": ""
+        },
+        {
+            "id": 4,
+            "nome": "Patricia",
+            "sobrenome": "Lebsack",
+            "cep": "23451625",
+            "anonimato": "Não",
+            "email": "Julianne.OConner@kory.org",
+            "celular": "493-170-9623 x156",
+            "sobre": "kale.biz",
+            "valor": "ate 50 reais",
+            "senha": "Patricia",
+            "status": ""
+        },
+        {
+            "id": 5,
+            "nome": "Chelsey",
+            "sobrenome": "Dietrich",
+            "cep": "20132054",
+            "anonimato": "Sim",
+            "email": "Lucio_Hettinger@annie.ca",
+            "celular": "(254)954-1289",
+            "sobre": "demarco.info",
+            "valor": "ate 50 reais",
+            "senha": "Chelsey",
+            "status": ""
+        },
+        {
+            "id": 6,
+            "nome": "Dennis",
+            "sobrenome": "Schulist",
+            "cep": "21048750",
+            "anonimato": "Sim",
+            "email": "Karley_Dach@jasper.info",
+            "celular": "1-477-935-8478",
+            "sobre": "ola.org",
+            "valor": "ate 50 reais",
+            "senha": "Dennis",
+            "status": ""
+        },
+        {
+            "id": 7,
+            "nome": "Kurtis",
+            "sobrenome": "Weissnat",
+            "cep": "87952102",
+            "anonimato": "Não",
+            "email": "Telly.Hoeger@billy.biz",
+            "celular": "210.067.6132",
+            "sobre": "elvis.io",
+            "valor": "ate 100 reais",
+            "senha": "Kurtis",
+            "status": ""
+        },
+        {
+            "id": 8,
+            "nome": "Nicholas",
+            "sobrenome": "Runolfsdottir",
+            "cep": "12302457",
+            "anonimato": "Sim",
+            "email": "Sherwood@rosamond.me",
+            "celular": "586.493.6943",
+            "sobre": "jacynthe.com",
+            "valor": "ate 100 reais",
+            "senha": "Nicholas",
+            "status": ""
+        },
+        {
+            "id": 9,
+            "nome": "Glenna",
+            "sobrenome": "Reichert",
+            "cep": "52085674",
+            "anonimato": "Sim",
+            "email": "Chaim_McDermott@dana.io",
+            "celular": "(775)976-6794",
+            "sobre": "conrad.com",
+            "valor": "mais de 100 reais",
+            "senha": "Glenna",
+            "status": ""
+        },
+        {
+            "id": 10,
+            "nome": "Clementina",
+            "sobrenome": "DuBuque",
+            "cep": "21652012",
+            "anonimato": "Sim",
+            "email": "Rey.Padberg@karina.biz",
+            "celular": "024-648-3804",
+            "sobre": "ambrose.net",
+            "valor": "mais de 100 reais",
+            "senha": "Clementina",
+            "status": ""
+        }
     ]
 };
 
@@ -211,11 +325,12 @@ function addUser(nomeValue, sobrenomeValue, loginValue, senhaValue, emailValue, 
         "sobrenome": sobrenomeValue,
         "email": emailValue,
         "valor": valorValue,
-        "anonimo": anonimoValue,
+        "anonimato": anonimoValue,
         "genero": genreValue,
         "data": dateValue,
-        "telefone": phoneValue,
+        "celular": phoneValue,
         "cep": cepValue,
+        "status": "",
         "sobre": aboutValue
     };
 
