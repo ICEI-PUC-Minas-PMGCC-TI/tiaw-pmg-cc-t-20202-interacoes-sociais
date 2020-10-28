@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configurção de conta do usúario</title>
+    <title>Configurção de conta do psicólogo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="../scripts/jquery-3.5.1.min.js"></script>
-    <link rel="stylesheet" href="../css/style-config-conta-usuario.css">
 </head>
 
 <body>
@@ -59,22 +58,17 @@
         </div>
 
         <div class="row">
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-10">
-                        <label for="anonimato">Anonimato</label>
-                        <input type="text" name="anonimato" id="anonimato" class="form-control" disabled>
-                    </div>
-                    <div class="col-2">
-                        <button id="btn_alterar" class="btn btn-warning" data-toggle="modal"
-                            data-target="#alterar_anonimo">Alterar</button>
-                    </div>
-                </div>
+            <div class="col">
+                <label for="sobre">Sobre meu trabalho</label>
+                <textarea name="sobre" id="sobre_job" cols="30" rows="10" class="form-control"></textarea>
             </div>
+        </div>
+
+        <div class="row">
             <div class="col-6">
                 <div class="row">
                     <div class="col-10">
-                        <label for="valor">Valor a pagar</label>
+                        <label for="valor">Valor da consulta</label>
                         <input type="text" name="valor" id="valor" class="form-control" disabled>
                     </div>
                     <div class="col-2">
@@ -138,9 +132,6 @@
                 </div>
             </div>
         </div>
-        <!-- </form> -->
-
-
 
     </div>
 
@@ -170,46 +161,18 @@
         </div>
     </div>
 
-    <div class="modal fade" id="alterar_anonimo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Alterar anonimato</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label class="text-info">Deseja se manter em aninomato ? </label>
-                        <select id="select_anonimo_modal" name="user_state" class="form-control">
-                            <option value="Sim">Sim</option>
-                            <option value="Não">Não</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary btn_save" id="btn_save_anonimato"
-                        data-dismiss="modal">Salvar alterações</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="modal fade" id="alterar_valor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Alterar valor a pagar</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Alterar valor da consulta</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="text-info">Escolha uma opção que satisfaz o valor que você poderia pagar
-                            por consulta </label>
+                        <label class="text-info">Escolha uma opção que satisfaz o valor da sua consulta </label>
                         <select id="valor_modal" name="user_state" class="form-control">
                             <option value="Gratuito">Gratuito</option>
                             <option value="Até 50 reais">Até 50 reais</option>
@@ -321,7 +284,7 @@
     </div>
 
 
-    <script src="../scripts/config_conta_usuario.js"></script>
+    <script src="../scripts/config_conta_psico.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

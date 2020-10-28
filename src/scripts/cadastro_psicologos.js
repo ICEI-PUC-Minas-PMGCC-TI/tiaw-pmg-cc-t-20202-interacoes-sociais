@@ -66,12 +66,12 @@ function salvaLogin(event) {
         return
     }
 
-    if (phoneValue.length < 8) {
+    if (phoneValue.length < 11) {
         alert("Celular invalido.");
         return
     }
 
-    if (cepValue < 6) {
+    if (cepValue < 8) {
         alert("Cep invalido.");
         return
     }
@@ -86,7 +86,7 @@ function salvaLogin(event) {
         return
     }
 
-    if (emailValue == '') {
+    if (!isEmail(emailValue)) {
         alert("Email invalido.");
         return
     }
@@ -94,19 +94,16 @@ function salvaLogin(event) {
         alert("Gentileza preencher sobre você.");
         return
     }
-    if (aboutValue.length < 60) {
+    if (aboutValue.length < 30) {
         alert("Gentileza preencher mais sobre você.");
-        alert("");
         return
     }
     if (aboutjobValue == '') {
         alert("Gentileza preencher sobre seu trabalho.");
-        alert("");
         return
     }
-    if (aboutjobValue.length < 60) {
+    if (aboutjobValue.length < 30) {
         alert("Gentileza preencher mais sobre seu trabalho.");
-        alert("");
         return
     }
     else if (!isEmail(emailValue)) {
@@ -142,7 +139,7 @@ document.getElementById('btn_salvar').addEventListener('click', salvaLogin);
 const LOGIN_URL = "cadastro_psicologos.html";
 
 // Objeto para o banco de dados de usuários baseado em JSON
-var db_usuariospsico = {};
+var db_psico = {};
 
 // Objeto para o usuário corrente
 var usuarioCorrente = {};
@@ -168,24 +165,147 @@ function generateUUID() { // Public Domain/MIT
 
 // Dados de usuários para serem utilizados como carga inicial
 const dadosIniciais = {
-    usuarios: [
+    "data": [
         {
-            "id": generateUUID(),
-            "login": "admin",
-            "senha": "123",
-            "nome": "Administrador do Sistema",
-            "sobrenome": "",
-            "email": "admin@abc.com",
-            "preco": "",
-            "crp": "",
-            "genero": "",
-            "data": "",
-            "telefone": "",
-            "cep": "",
-            "sobre": "",
-            "sobretrab": ""
+            "id": 1,
+            "nome": "Leanne",
+            "sobrenome": "Graham",
+            "cep": "51346587",
+            "anonimato": "Sim",
+            "email": "Sincere@april.biz",
+            "celular": "1-770-736-8031",
+            "sobre": "hildegard.org",
+            "sobre_job": "hildegard.org",
+            "valor": "gratuito",
+            "senha": "Leanne",
+            "status": ""
         },
-        { "id": generateUUID(), "login": "user", "senha": "123", "nome": "Usuario Comum", "email": "user@abc.com" },
+        {
+            "id": 2,
+            "nome": "Ervin",
+            "sobrenome": "Howell",
+            "cep": "13468572",
+            "anonimato": "Não",
+            "email": "Shanna@melissa.tv",
+            "celular": "010-692-6593",
+            "sobre": "anastasia.net",
+            "sobre_job": "anastasia.net",
+            "valor": "gratuito",
+            "senha": "Ervin",
+            "status": ""
+        },
+        {
+            "id": 3,
+            "nome": "Clementine",
+            "sobrenome": "Bauch",
+            "cep": "12345678",
+            "anonimato": "Não",
+            "email": "Nathan@yesenia.net",
+            "celular": "1-463-123-4447",
+            "sobre": "ramiro.info",
+            "sobre_job": "ramiro.info",
+            "valor": "gratuito",
+            "senha": "Clementine",
+            "status": ""
+        },
+        {
+            "id": 4,
+            "nome": "Patricia",
+            "sobrenome": "Lebsack",
+            "cep": "23451625",
+            "anonimato": "Não",
+            "email": "Julianne.OConner@kory.org",
+            "celular": "493-170-9623 x156",
+            "sobre": "kale.biz",
+            "sobre_job": "kale.biz",
+            "valor": "ate 50 reais",
+            "senha": "Patricia",
+            "status": ""
+        },
+        {
+            "id": 5,
+            "nome": "Chelsey",
+            "sobrenome": "Dietrich",
+            "cep": "20132054",
+            "anonimato": "Sim",
+            "email": "Lucio_Hettinger@annie.ca",
+            "celular": "(254)954-1289",
+            "sobre": "demarco.info",
+            "sobre_job": "demarco.info",
+            "valor": "ate 50 reais",
+            "senha": "Chelsey",
+            "status": ""
+        },
+        {
+            "id": 6,
+            "nome": "Dennis",
+            "sobrenome": "Schulist",
+            "cep": "21048750",
+            "anonimato": "Sim",
+            "email": "Karley_Dach@jasper.info",
+            "celular": "1-477-935-8478",
+            "sobre": "ola.org",
+            "sobre_job": "ola.org",
+            "valor": "ate 50 reais",
+            "senha": "Dennis",
+            "status": ""
+        },
+        {
+            "id": 7,
+            "nome": "Kurtis",
+            "sobrenome": "Weissnat",
+            "cep": "87952102",
+            "anonimato": "Não",
+            "email": "Telly.Hoeger@billy.biz",
+            "celular": "210.067.6132",
+            "sobre": "elvis.io",
+            "sobre_job": "elvis.io",
+            "valor": "ate 100 reais",
+            "senha": "Kurtis",
+            "status": ""
+        },
+        {
+            "id": 8,
+            "nome": "Nicholas",
+            "sobrenome": "Runolfsdottir",
+            "cep": "12302457",
+            "anonimato": "Sim",
+            "email": "Sherwood@rosamond.me",
+            "celular": "586.493.6943",
+            "sobre": "jacynthe.com",
+            "sobre_job": "jacynthe.com",
+            "valor": "ate 100 reais",
+            "senha": "Nicholas",
+            "status": ""
+        },
+        {
+            "id": 9,
+            "nome": "Glenna",
+            "sobrenome": "Reichert",
+            "cep": "52085674",
+            "anonimato": "Sim",
+            "email": "Chaim_McDermott@dana.io",
+            "celular": "(775)976-6794",
+            "sobre": "conrad.com",
+            "sobre_job": "conrad.com",
+            "valor": "mais de 100 reais",
+            "senha": "Glenna",
+            "status": ""
+        },
+        {
+            "id": 10,
+            "nome": "Clementina",
+            "sobrenome": "DuBuque",
+            "cep": "21652012",
+            "anonimato": "Sim",
+            "email": "Rey.Padberg@karina.biz",
+            "celular": "024-648-3804",
+            "sobre": "ambrose.net",
+            "sobre_job": "ambrose.net",
+            "valor": "mais de 100 reais",
+            "senha": "Clementina",
+            "status": ""
+        }
     ]
 };
 
@@ -200,7 +320,7 @@ function initLoginApp() {
 
     // PARTE 2 - INICIALIZA BANCO DE DADOS DE USUÁRIOS
     // Obtem a string JSON com os dados de usuários a partir do localStorage
-    var usuariosJSON = localStorage.getItem('db_usuariospsico');
+    var usuariosJSON = localStorage.getItem('db_psico');
 
     // Verifica se existem dados já armazenados no localStorage
     if (!usuariosJSON) {  // Se NÃO há dados no localStorage
@@ -209,15 +329,15 @@ function initLoginApp() {
         alert('Dados de usuários não encontrados no localStorage. \n -----> Fazendo carga inicial.');
 
         // Copia os dados iniciais para o banco de dados 
-        db_usuariospsico = dadosIniciais;
+        db_psico = dadosIniciais;
 
         // Salva os dados iniciais no local Storage convertendo-os para string antes
-        localStorage.setItem('db_usuariospsico', JSON.stringify(dadosIniciais));
+        localStorage.setItem('db_psico', JSON.stringify(dadosIniciais));
     }
     else {  // Se há dados no localStorage
 
         // Converte a string JSON em objeto colocando no banco de dados baseado em JSON
-        db_usuariospsico = JSON.parse(usuariosJSON);
+        db_psico = JSON.parse(usuariosJSON);
     }
 };
 
@@ -232,21 +352,22 @@ function addUser(nome, sobrenome, login, senha, email, preco, crp, genre, date, 
         "nome": nome,
         "sobrenome": sobrenome,
         "email": email,
-        "preco": preco,
+        "valor": preco,
         "crp": crp,
         "genero": genre,
         "data": date,
-        "telefone": phone,
+        "celular": phone,
         "cep": cep,
         "sobre": about,
-        "sobretrab": aboutjob
+        "status": "",
+        "sobre_job": aboutjob
     };
 
     // Inclui o novo usuario no banco de dados baseado em JSON
-    db_usuariospsico.usuarios.push(usuario);
+    db_psico.data.push(usuario);
 
     // Salva o novo banco de dados com o novo usuário no localStorage
-    localStorage.setItem('db_usuariospsico', JSON.stringify(db_usuariospsico));
+    localStorage.setItem('db_psico', JSON.stringify(db_psico));
 }
 
 // Inicializa as estruturas utilizadas pelo LoginApp

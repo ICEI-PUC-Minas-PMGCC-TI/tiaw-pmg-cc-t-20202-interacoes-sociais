@@ -83,18 +83,14 @@ function salvaLogin(event) {
         alert("Login invalido");
         return
     }
-
-    if (emailValue == '') {
-        alert("Email invalido");
-        return
-    }
-    else if (!isEmail(emailValue)) {
-        alert("Email escrito errado");
+    
+    if (!isEmail(emailValue)) {
+        alert("Email inválido.");
         return
     }
 
     if (senhaValue.length < 5) {
-        alert("Senha invalida");
+        alert("Senha inválida");
         return
     }
 
