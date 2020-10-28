@@ -121,7 +121,7 @@ document.getElementById('btn_salvar').addEventListener('click', salvaLogin);
 const LOGIN_URL = "cadastro_paciente.html";
 
 // Objeto para o banco de dados de usuários baseado em JSON
-var db_usuarios = {};
+var db_user = {};
 
 // Objeto para o usuário corrente
 var usuarioCorrente = {};
@@ -146,7 +146,7 @@ function generateUUID() { // Public Domain/MIT
 
 
 // Dados de usuários para serem utilizados como carga inicial
-const dadosIniciais = {
+const db_contatos_inicial = {
     usuarios: [
         {
             "id": generateUUID(),
@@ -178,7 +178,7 @@ function initLoginApp() {
 
     // PARTE 2 - INICIALIZA BANCO DE DADOS DE USUÁRIOS
     // Obtem a string JSON com os dados de usuários a partir do localStorage
-    var usuariosJSON = localStorage.getItem('db_usuarios');
+    var usuariosJSON = localStorage.getItem('db_user');
 
     // Verifica se existem dados já armazenados no localStorage
     if (!usuariosJSON) {  // Se NÃO há dados no localStorage
@@ -187,15 +187,15 @@ function initLoginApp() {
         alert('Dados de usuários não encontrados no localStorage. \n -----> Fazendo carga inicial.');
 
         // Copia os dados iniciais para o banco de dados 
-        db_usuarios = dadosIniciais;
+        db_user = db_contatos_inicial;
 
         // Salva os dados iniciais no local Storage convertendo-os para string antes
-        localStorage.setItem('db_usuarios', JSON.stringify(dadosIniciais));
+        localStorage.setItem('db_user', JSON.stringify(db_contatos_inicial));
     }
     else {  // Se há dados no localStorage
 
         // Converte a string JSON em objeto colocando no banco de dados baseado em JSON
-        db_usuarios = JSON.parse(usuariosJSON);
+        db_user = JSON.parse(usuariosJSON);
     }
 };
 
@@ -220,10 +220,10 @@ function addUser(nomeValue, sobrenomeValue, loginValue, senhaValue, emailValue, 
     };
 
     // Inclui o novo usuario no banco de dados baseado em JSON
-    db_usuarios.usuarios.push(usuario);
+    db_user.data.push(usuario);
 
     // Salva o novo banco de dados com o novo usuário no localStorage
-    localStorage.setItem('db_usuarios', JSON.stringify(db_usuarios));
+    localStorage.setItem('db_user', JSON.stringify(db_user));
 }
 
 // Inicializa as estruturas utilizadas pelo LoginApp
