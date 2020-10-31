@@ -101,7 +101,7 @@ function loginUser (email, senha) {
     return false;
 }
 
-function loginUser1 (email, senha) {
+function loginPsico (email, senha) {
     
     // Verifica todos os itens do banco de dados de usuarios 
     // para localizar o usuário informado no formulario de login

@@ -367,7 +367,7 @@
     </div>
   </div>
 
-  <form id="login-form" class="form" method="post" onsubmit="loginUser (this)">
+  <form id="login-user" class="form" method="post" onsubmit="loginUser (this)">
     <div class="modal fade " id="ModalEntrarPaciente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -384,11 +384,11 @@
               <div class="card-body">
                 <div class="form-group dado_pessoal">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email">
+                  <input type="email" class="form-control" id="emailUser">
                 </div>
                 <div class="form-group dado_pessoal">
                   <label for="senha">Senha</label>
-                  <input type="password" class="form-control" id="password">
+                  <input type="password" class="form-control" id="passwordUser">
                 </div>
                 <button type="submit" value="submit" class="btn btn-primary">Entrar</button>
                 <a href="#" class="col-12 col-sm-12 col-md-12 col-lg-12">Esqueceu sua senha?</a><br>
@@ -401,7 +401,7 @@
     </div>
   </form>
 
-  <form id="login-form1" class="form" method="post" onsubmit="loginUser1 (this)">
+  <form id="login-psico" class="form" method="post" onsubmit="loginPsico (this)">
     <div class="modal fade " id="ModalEntrarPsicologo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -418,11 +418,11 @@
               <div class="card-body">
                 <div class="form-group dado_pessoal">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email">
+                  <input type="email" class="form-control" id="emailPsico">
                 </div>
                 <div class="form-group dado_pessoal">
                   <label for="senha">Senha</label>
-                  <input type="password" class="form-control" id="password">
+                  <input type="password" class="form-control" id="passwordPsico">
                 </div>
                 <button type="submit" value="submit" class="btn btn-primary">Entrar</button>
                 <a href="#" class="col-12 col-sm-12 col-md-12 col-lg-12">Esqueceu sua senha?</a><br>
@@ -443,8 +443,8 @@
       event.preventDefault();
 
       // Obtem os dados de login e senha a partir do formulário de login
-      var email = document.getElementById('email').value;
-      var password = document.getElementById('password').value;
+      var email = document.getElementById('emailUser').value;
+      var password = document.getElementById('passwordUser').value;
 
       // Valida login e se estiver ok, redireciona para tela inicial da aplicação
         resultadoLogin = loginUser(email, password)
@@ -457,19 +457,20 @@
     }
 
     // Associa a funçao processaFormLogin  formulário adicionado um manipulador do evento submit
-    document.getElementById('login-form').addEventListener('submit', processaFormLogin);
+    document.getElementById('login-user').addEventListener('submit', processaFormLogin);
 
-    function processaFormLogin1(event) {
+    function processaFormLoginPsico(event) {
       // Cancela a submissão do formulário para tratar sem fazer refresh da tela
       event.preventDefault();
 
       // Obtem os dados de login e senha a partir do formulário de login
-      var email = document.getElementById('email').value;
-      var password = document.getElementById('password').value;
+      var email = document.getElementById('emailPsico').value;
+      var password = document.getElementById('passwordPsico').value;
 
       // Valida login e se estiver ok, redireciona para tela inicial da aplicação
-        resultadoLogin1 = loginUser1(email, password)
-        if (resultadoLogin1) {
+
+        resultadoLogin = loginPsico(email, password)
+        if (resultadoLogin) {
           window.location.href = '../html/config_conta_psico.html';
         }
         else { // Se login falhou, avisa ao usuário
@@ -477,10 +478,8 @@
         }
     }
 
-    // Associa a funçao processaFormLogin  formulário adicionado um manipulador do evento submit
-    document.getElementById('login-form1').addEventListener('submit', processaFormLogin1);
-
-
+    // Associa a funçao processaFormLoginPsico  formulário adicionado um manipulador do evento submit
+    document.getElementById('login-psico').addEventListener('submit', processaFormLoginPsico);
   </script>
 
 
