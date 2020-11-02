@@ -326,10 +326,10 @@
           <div class="card">
             <div class="card-body">
               <img src="../imagens/ingressar.png" alt="">
-              <a href="./cadastro-usuario.html">
+              <a href="../html/cadastro_paciente.html">
                 <button type="button" class="btn btn-primary btn_ingressar ">Ingressar como paciente</button>
               </a>
-              <a href="./cadastro-psicologo.html">
+              <a href="../html/cadastro_psicologos.html">
                 <button type="button" class="btn btn-primary btn_ingressar ">Ingressar como psicólogo</button>
               </a>
               <h6><a href="#" class="">Entrar</a></h6>
@@ -392,7 +392,7 @@
                 </div>
                 <button type="submit" value="submit" class="btn btn-primary">Entrar</button>
                 <a href="#" class="col-12 col-sm-12 col-md-12 col-lg-12">Esqueceu sua senha?</a><br>
-                <a href="#" class="col-12 col-sm-12 col-md-12 col-lg-12">Criar uma nova conta</a>
+                <a href="../html/cadastro_paciente.html" class="col-12 col-sm-12 col-md-12 col-lg-12">Criar uma nova conta</a>
               </div>
             </div>
           </div>
@@ -426,7 +426,7 @@
                 </div>
                 <button type="submit" value="submit" class="btn btn-primary">Entrar</button>
                 <a href="#" class="col-12 col-sm-12 col-md-12 col-lg-12">Esqueceu sua senha?</a><br>
-                <a href="#" class="col-12 col-sm-12 col-md-12 col-lg-12">Criar uma nova conta</a>
+                <a href="../html/cadastro_psicologos.html" class="col-12 col-sm-12 col-md-12 col-lg-12">Criar uma nova conta</a>
               </div>
             </div>
           </div>
@@ -463,13 +463,17 @@
       // Cancela a submissão do formulário para tratar sem fazer refresh da tela
       event.preventDefault();
 
+      
+
       // Obtem os dados de login e senha a partir do formulário de login
-      var email = document.getElementById('emailPsico').value;
-      var password = document.getElementById('passwordPsico').value;
+      var email_psico = document.getElementById('emailPsico').value;
+      var password_psico = document.getElementById('passwordPsico').value;
+
+      
 
       // Valida login e se estiver ok, redireciona para tela inicial da aplicação
 
-        resultadoLogin = loginPsico(email, password)
+        resultadoLogin = loginPsico(email_psico, password_psico);
         if (resultadoLogin) {
           window.location.href = '../html/config_conta_psico.html';
         }

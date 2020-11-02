@@ -1,5 +1,7 @@
 var db_user = {};
 
+var db_psico = {};
+
 var usuarioCorrente = {};
 
 const dadosIniciais = {
@@ -59,6 +61,7 @@ function initLoginApp () {
     // PARTE 2 - INICIALIZA BANCO DE DADOS DE USUÁRIOS
     // Obtem a string JSON com os dados de usuários a partir do localStorage
     var usuariosJSON = localStorage.getItem('db_user');
+    let usuario_psico_json = localStorage.getItem('db_psico');
 
     // Verifica se existem dados já armazenados no localStorage
     if (!usuariosJSON) {  // Se NÃO há dados no localStorage
@@ -77,17 +80,45 @@ function initLoginApp () {
         // Converte a string JSON em objeto colocando no banco de dados baseado em JSON
         db_user = JSON.parse(usuariosJSON);    
     }
+
+    if (!usuario_psico_json) {  // Se NÃO há dados no localStorage
+        
+        // Informa sobre localStorage vazio e e que serão carregados os dados iniciais
+        alert('Dados de usuários não encontrados no localStorage. \n -----> Fazendo carga inicial.');
+
+        // Copia os dados iniciais para o banco de dados 
+        db_psico = dadosIniciais;
+
+        // Salva os dados iniciais no local Storage convertendo-os para string antes
+        localStorage.setItem('db_psico', JSON.stringify (dadosIniciais));
+    }
+    else  {  // Se há dados no localStorage
+        
+        // Converte a string JSON em objeto colocando no banco de dados baseado em JSON
+        db_psico = JSON.parse(usuario_psico_json);    
+    }
 };
 
 function loginUser (email, senha) {
     
     // Verifica todos os itens do banco de dados de usuarios 
     // para localizar o usuário informado no formulario de login
-    for (var i = 0; i < db_user.data.length; i++) {
-        var usuario = db_user.data[i];
+    for (let i = 0; i < db_user.data.length; i++) {
+        let usuario = db_user.data[i];
         
         // Se encontrou login, carrega usuário corrente e salva no Session Storage
         if (email == usuario.email && senha == usuario.senha) {
+            usuarioCorrente.id = usuario.id;
+            usuarioCorrente.nome = usuario.nome;
+            usuarioCorrente.sobrenome = usuario.sobrenome;
+            usuarioCorrente.cep = usuario.cep;
+            usuarioCorrente.anonimato = usuario.anonimato;
+            usuarioCorrente.email = usuario.email;
+            usuarioCorrente.celular = usuario.celular;
+            usuarioCorrente.sobre = usuario.sobre;
+            usuarioCorrente.valor = usuario.valor;
+            usuarioCorrente.senha = usuario.senha;
+            usuarioCorrente.status = usuario.status;
             
             // Salva os dados do usuário corrente no Session Storage, mas antes converte para string
             sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
@@ -105,12 +136,24 @@ function loginPsico (email, senha) {
     
     // Verifica todos os itens do banco de dados de usuarios 
     // para localizar o usuário informado no formulario de login
-    for (var i = 0; i < db_user.data.length; i++) {
-        var usuario = db_user.data[i];
+
+    for (let i = 0; i < db_psico.data.length; i++) {
+        let usuario = db_psico.data[i];
         
         // Se encontrou login, carrega usuário corrente e salva no Session Storage
         if (email == usuario.email && senha == usuario.senha) {
-            
+
+            usuarioCorrente.id = usuario.id;
+            usuarioCorrente.nome = usuario.nome;
+            usuarioCorrente.sobrenome = usuario.sobrenome;
+            usuarioCorrente.cep = usuario.cep;
+            usuarioCorrente.email = usuario.email;
+            usuarioCorrente.celular = usuario.celular;
+            usuarioCorrente.sobre = usuario.sobre;
+            usuarioCorrente.sobre_job = usuario.sobre_job;
+            usuarioCorrente.valor = usuario.valor;
+            usuarioCorrente.senha = usuario.senha;
+            usuarioCorrente.status = usuario.status;
             // Salva os dados do usuário corrente no Session Storage, mas antes converte para string
             sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
 

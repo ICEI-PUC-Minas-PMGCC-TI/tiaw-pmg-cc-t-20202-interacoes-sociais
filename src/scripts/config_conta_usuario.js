@@ -137,37 +137,39 @@ var db_contatos_inicial = {
 // objeto do banco de dados de users em json
 var db_user = {};
 
+var usuarioCorrente = {};
+
 //colocar os nomes na opçao de troca de usuario
-function select_contato() {
+/* function select_contato() {
     $("#select_user").html("");
     for (i = 0; i < db_user.data.length; i++) {
         let contato = db_user.data[i];
 
         $("#select_user").append(`<option value="${contato.id}">${contato.nome} ${contato.sobrenome}</option>`)
     }
-}
+} */
 
 function find_user(person, id_user) { return person.id === id_user }
 
 //faz aparecer os dados do usuario na tela de acordo com o nome selecionado em #user_select
 function printa_user() {
     //pega o valor do ID do usuario selecionado
-    let user_id = document.getElementById("select_user").value;
-    //acha o index no banco de dados cujo ID é o do usuario selecionado
-    let user_dados_index = db_user.data.findIndex(x => x.id == user_id);
-    //joga na variavel todo o objeto cujo ID eh o do usuario
-    let user_dados = db_user.data[user_dados_index];
-
+/*         let user_id = document.getElementById("select_user").value;
+ */    //acha o index no banco de dados cujo ID é o do usuario selecionado
+/*         let user_dados_index = db_user.data.findIndex(x => x.id == user_id);
+ */    //joga na variavel todo o objeto cujo ID eh o do usuario
+/*         let user_dados = db_user.data[user_dados_index]; */
+ 
     //altera os campos com os valores
-    $("#nome").val(`${user_dados.nome} ${user_dados.sobrenome}`);
-    $("#status").val(`${user_dados.status}`);
-    $("#sobre").val(`${user_dados.sobre}`);
-    $("#anonimato").val(`${user_dados.anonimato}`);
-    $("#valor").val(`${user_dados.valor}`);
-    $("#celular").val(`${user_dados.celular}`);
-    $("#cep").val(`${user_dados.cep}`);
-    $("#email").val(`${user_dados.email}`);
-    $("#senha").val(`${user_dados.senha}`);
+    $("#nome").val(`${usuarioCorrente.nome} ${usuarioCorrente.sobrenome}`);
+    $("#status").val(`${usuarioCorrente.status}`);
+    $("#sobre").val(`${usuarioCorrente.sobre}`);
+    $("#anonimato").val(`${usuarioCorrente.anonimato}`);
+    $("#valor").val(`${usuarioCorrente.valor}`);
+    $("#celular").val(`${usuarioCorrente.celular}`);
+    $("#cep").val(`${usuarioCorrente.cep}`);
+    $("#email").val(`${usuarioCorrente.email}`);
+    $("#senha").val(`${usuarioCorrente.senha}`);
 }
 
 function isEmail(email) {
@@ -180,6 +182,12 @@ $(document).ready(function () {
 
     //--------------------------------------------------- DADOS DO LOCAL STORAGE --------------------------------------------------------------------------------------------
     var db_json = localStorage.getItem('db_user');
+    var db_json_ss = sessionStorage.getItem('usuarioCorrente');
+    if(db_json_ss)
+    {
+        usuarioCorrente = JSON.parse(db_json_ss);
+    }
+
     if (!db_json) {
         db_json = db_contatos_inicial;
         alert("Adicionado ao local Storage vários usuários.");
@@ -190,8 +198,14 @@ $(document).ready(function () {
     }
 
     //carrega o select contato
-    select_contato();
+    /* select_contato(); */
     printa_user();
+
+    //pega o valor do ID do usuario selecionado
+    var user_id = usuarioCorrente.id;
+
+    //acha o index no banco de dados cujo ID é o do usuario selecionado
+    var user_dados_index = db_user.data.findIndex(x => x.id == user_id);
 
     //---------------------------------------------salva as alteraçoes feita modal de alteraçoes, apos clicar no botao de salvar-----------------------------------------//
 
@@ -201,13 +215,12 @@ $(document).ready(function () {
         let alterar_sobrenome;
         let alterar_nome;
         let enviar = true;
-        //pega o valor do ID do usuario selecionado
-        let user_id = document.getElementById("select_user").value;
-        //acha o index no banco de dados cujo ID é o do usuario selecionado
-        let user_dados_index = db_user.data.findIndex(x => x.id == user_id);
+
+
 
         if ($("#nome_modal").val() != "") {
             db_user.data[user_dados_index].nome = $("#nome_modal").val();
+            usuarioCorrente.nome = $("#nome_modal").val();
         }
         else {
             alert("Campo Nome não pode ficar vazio");
@@ -215,6 +228,7 @@ $(document).ready(function () {
         }
         if ($("#sobrenome_modal").val() != "") {
             db_user.data[user_dados_index].sobrenome = $("#sobrenome_modal").val();
+            usuarioCorrente.sobrenome = $("#sobrenome_modal").val();
         }
         else {
             alert("Campo Sobrenome não pode ficar vazio");
@@ -223,8 +237,10 @@ $(document).ready(function () {
 
         if (enviar) {
             localStorage.setItem('db_user', JSON.stringify(db_user));
+            sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
 
-            select_contato();
+
+            /* select_contato(); */
             printa_user();
         }
 
@@ -234,14 +250,14 @@ $(document).ready(function () {
 
     $("#btn_save_anonimato").click( () => {
         let alterar_anonimato;
-        //pega o valor do ID do usuario selecionado
-        let user_id = document.getElementById("select_user").value;
-        //acha o index no banco de dados cujo ID é o do usuario selecionado
-        let user_dados_index = db_user.data.findIndex(x => x.id == user_id);
+
+
 
         db_user.data[user_dados_index].anonimato = $("#select_anonimo_modal").val();
+        usuarioCorrente.anonimato = $("#select_anonimo_modal").val();
 
         localStorage.setItem('db_user', JSON.stringify(db_user));
+        sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
 
         printa_user();
     })
@@ -250,14 +266,14 @@ $(document).ready(function () {
 
     $("#btn_save_valor").click( () => {
         let alterar_anonimato;
-        //pega o valor do ID do usuario selecionado
-        let user_id = document.getElementById("select_user").value;
-        //acha o index no banco de dados cujo ID é o do usuario selecionado
-        let user_dados_index = db_user.data.findIndex(x => x.id == user_id);
+
+
 
         db_user.data[user_dados_index].valor = $("#valor_modal").val();
+        usuarioCorrente.valor = $("#valor_modal").val();
 
         localStorage.setItem('db_user', JSON.stringify(db_user));
+        sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
 
         printa_user();
     })
@@ -266,15 +282,15 @@ $(document).ready(function () {
 
     $("#btn_save_celular").click( () => {
         let alterar_anonimato;
-        //pega o valor do ID do usuario selecionado
-        let user_id = document.getElementById("select_user").value;
-        //acha o index no banco de dados cujo ID é o do usuario selecionado
-        let user_dados_index = db_user.data.findIndex(x => x.id == user_id);
+
+
 
         if ($("#celular_modal").val().length > 10) {
             db_user.data[user_dados_index].celular = $("#celular_modal").val();
+            usuarioCorrente.celular = $("#celular_modal").val();
 
             localStorage.setItem('db_user', JSON.stringify(db_user));
+            sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
 
             printa_user();
         }
@@ -289,14 +305,15 @@ $(document).ready(function () {
 
     $("#btn_save_cep").click( () => {
         let alterar_anonimato;
-        //pega o valor do ID do usuario selecionado
-        let user_id = document.getElementById("select_user").value;
-        //acha o index no banco de dados cujo ID é o do usuario selecionado
-        let user_dados_index = db_user.data.findIndex(x => x.id == user_id);
+
+
 
         if ($("#cep_modal").val().length > 7) {
             db_user.data[user_dados_index].cep = $("#cep_modal").val();
+            usuarioCorrente.cep = $("#cep_modal").val();
+            
             localStorage.setItem('db_user', JSON.stringify(db_user));
+            sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
 
             printa_user();
         }
@@ -309,14 +326,14 @@ $(document).ready(function () {
 
     $("#btn_save_email").click( () => {
         let alterar_anonimato;
-        //pega o valor do ID do usuario selecionado
-        let user_id = document.getElementById("select_user").value;
-        //acha o index no banco de dados cujo ID é o do usuario selecionado
-        let user_dados_index = db_user.data.findIndex(x => x.id == user_id);
+
+
 
         if (isEmail($("#email_modal").val()) && $("#email_modal").val() == $("#email2_modal").val()) {
             db_user.data[user_dados_index].email = $("#email_modal").val();
+            usuarioCorrente.email = $("#email_modal").val();
             localStorage.setItem('db_user', JSON.stringify(db_user));
+            sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
 
             printa_user();
         }
@@ -334,18 +351,19 @@ $(document).ready(function () {
 
     $("#btn_save_senha").click( () => {
         let alterar_anonimato;
-        //pega o valor do ID do usuario selecionado
-        let user_id = document.getElementById("select_user").value;
-        //acha o index no banco de dados cujo ID é o do usuario selecionado
-        let user_dados_index = db_user.data.findIndex(x => x.id == user_id);
 
-        if ($("#senha_modal").val() == db_user.data[user_dados_index].senha && $("#nova_senha_modal").val().length > 5 && $("#nova_senha_modal").val() == $("#nova_senha2_modal").val()) {
+
+
+        if ($("#senha_modal").val() == usuarioCorrente.senha && $("#nova_senha_modal").val().length > 5 && $("#nova_senha_modal").val() == $("#nova_senha2_modal").val()) {
             db_user.data[user_dados_index].senha = $("#nova_senha_modal").val();
+            usuarioCorrente.senha = $("#nova_senha_modal").val();
+
             localStorage.setItem('db_user', JSON.stringify(db_user));
+            sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
 
             printa_user();
         }
-        else if($("#senha_modal").val() != db_user.data[user_dados_index].senha)
+        else if($("#senha_modal").val() != usuarioCorrente.senha)
         {
             alert("Senha atual incorreta.");
         }
@@ -365,14 +383,14 @@ $(document).ready(function () {
 
     $("#sobre").focusout( () => {
         let alterar_anonimato;
-        //pega o valor do ID do usuario selecionado
-        let user_id = document.getElementById("select_user").value;
-        //acha o index no banco de dados cujo ID é o do usuario selecionado
-        let user_dados_index = db_user.data.findIndex(x => x.id == user_id);
+
+
 
         db_user.data[user_dados_index].sobre = $("#sobre").val();
+        usuarioCorrente.sobre = $("#sobre").val();
 
         localStorage.setItem('db_user', JSON.stringify(db_user));
+        sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
 
         printa_user();
     })
@@ -381,14 +399,14 @@ $(document).ready(function () {
 
     $("#status").focusout( () => {
         let alterar_anonimato;
-        //pega o valor do ID do usuario selecionado
-        let user_id = document.getElementById("select_user").value;
-        //acha o index no banco de dados cujo ID é o do usuario selecionado
-        let user_dados_index = db_user.data.findIndex(x => x.id == user_id);
+
+
 
         db_user.data[user_dados_index].status = $("#status").val();
+        usuarioCorrente.status = $("#status").val();
 
         localStorage.setItem('db_user', JSON.stringify(db_user));
+        sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
 
         printa_user();
     })

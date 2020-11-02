@@ -11,127 +11,115 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <label class="select_user">Trocar Usuário </label>
-                    <select id="select_user" name="select_user" class="form-control" value="0"
-                        onchange="printa_user();">
-                    </select>
-                </div>
-            </div>
-        </div>
-        <h1 id="title">Gerenciar conta</h1>
-        <!-- <form id="form_contato"> -->
-        <div class="row">
-            <div class="col-4">
-                <img src="https://picsum.photos/100" alt="Foto de Perfil">
+    <h1 id="title">Gerenciar conta</h1>
+    <div class="row">
+        <div class="col-4">
+            <img src="https://picsum.photos/100" alt="Foto de Perfil">
 
-            </div>
-            <div class="col-8">
-                <div class="row"></div>
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-10">
-                            <label for="nome">Nome</label>
-                            <input type="text" name="nome" id="nome" class="form-control" disabled>
-                        </div>
-                        <div class="col-2">
-                            <button id="btn_alterar" class="btn btn-warning" data-toggle="modal"
-                                data-target="#alterar_nome">Alterar</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <label for="status"></label>
-                    <input type="text" name="status" id="status" class="form-control" placeholder="Status">
-                </div>
-            </div>
         </div>
-
-        <div class="row">
-            <div class="col">
-                <label for="sobre">Sobre mim</label>
-                <textarea name="sobre" id="sobre" cols="30" rows="10" class="form-control"></textarea>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <label for="sobre">Sobre meu trabalho</label>
-                <textarea name="sobre" id="sobre_job" cols="30" rows="10" class="form-control"></textarea>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-6">
+        <div class="col-8">
+            <div class="row"></div>
+            <div class="col-12">
                 <div class="row">
                     <div class="col-10">
-                        <label for="valor">Valor da consulta</label>
-                        <input type="text" name="valor" id="valor" class="form-control" disabled>
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome" class="form-control" disabled>
                     </div>
                     <div class="col-2">
                         <button id="btn_alterar" class="btn btn-warning" data-toggle="modal"
-                            data-target="#alterar_valor">Alterar</button>
+                            data-target="#alterar_nome">Alterar</button>
                     </div>
                 </div>
             </div>
+            <div class="col-12">
+                <label for="status"></label>
+                <input type="text" name="status" id="status" class="form-control" placeholder="Status">
+            </div>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-10">
-                        <label for="celular">Celular</label>
-                        <input type="text" name="celular" id="celular" class="form-control" disabled>
-                    </div>
-                    <div class="col-2">
-                        <button id="btn_alterar" class="btn btn-warning" data-toggle="modal"
-                            data-target="#alterar_cel">Alterar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-10">
-                        <label for="cep">CEP</label>
-                        <input type="text" name="cep" id="cep" class="form-control" disabled>
-                    </div>
-                    <div class="col-2">
-                        <button id="btn_alterar" class="btn btn-warning" data-toggle="modal"
-                            data-target="#alterar_cep">Alterar</button>
-                    </div>
-                </div>
-            </div>
+    <div class="row">
+        <div class="col">
+            <label for="sobre">Sobre mim</label>
+            <textarea name="sobre" id="sobre" cols="30" rows="10" class="form-control"></textarea>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-10">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" id="email" class="form-control" disabled>
-                    </div>
-                    <div class="col-2">
-                        <button id="btn_alterar" class="btn btn-warning" data-toggle="modal"
-                            data-target="#alterar_email">Alterar</button>
-                    </div>
+    <div class="row">
+        <div class="col">
+            <label for="sobre">Sobre meu trabalho</label>
+            <textarea name="sobre" id="sobre_job" cols="30" rows="10" class="form-control"></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-10">
+                    <label for="valor">Valor da consulta</label>
+                    <input type="text" name="valor" id="valor" class="form-control" disabled>
                 </div>
-            </div>
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-10">
-                        <label for="senha">Senha</label>
-                        <input type="password" name="senha" id="senha" class="form-control" disabled>
-                    </div>
-                    <div class="col-2">
-                        <button id="btn_alterar" class="btn btn-warning" data-toggle="modal"
-                            data-target="#alterar_senha">Alterar</button>
-                    </div>
+                <div class="col-2">
+                    <button id="btn_alterar" class="btn btn-warning" data-toggle="modal"
+                        data-target="#alterar_valor">Alterar</button>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-10">
+                    <label for="celular">Celular</label>
+                    <input type="text" name="celular" id="celular" class="form-control" disabled>
+                </div>
+                <div class="col-2">
+                    <button id="btn_alterar" class="btn btn-warning" data-toggle="modal"
+                        data-target="#alterar_cel">Alterar</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-10">
+                    <label for="cep">CEP</label>
+                    <input type="text" name="cep" id="cep" class="form-control" disabled>
+                </div>
+                <div class="col-2">
+                    <button id="btn_alterar" class="btn btn-warning" data-toggle="modal"
+                        data-target="#alterar_cep">Alterar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-10">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" class="form-control" disabled>
+                </div>
+                <div class="col-2">
+                    <button id="btn_alterar" class="btn btn-warning" data-toggle="modal"
+                        data-target="#alterar_email">Alterar</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-10">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" id="senha" class="form-control" disabled>
+                </div>
+                <div class="col-2">
+                    <button id="btn_alterar" class="btn btn-warning" data-toggle="modal"
+                        data-target="#alterar_senha">Alterar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     </div>
 
@@ -154,8 +142,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary btn_save" id="btn_save_nome"
-                        >Salvar alterações</button>
+                    <button type="button" class="btn btn-primary btn_save" id="btn_save_nome">Salvar alterações</button>
                 </div>
             </div>
         </div>
@@ -194,7 +181,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" >Alterar celular</h5>
+                    <h5 class="modal-title">Alterar celular</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -205,8 +192,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary btn_save" id="btn_save_celular"
-                        >Salvar alterações</button>
+                    <button type="button" class="btn btn-primary btn_save" id="btn_save_celular">Salvar
+                        alterações</button>
                 </div>
             </div>
         </div>
@@ -250,8 +237,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary btn_save" id="btn_save_email"
-                        >Salvar alterações</button>
+                    <button type="button" class="btn btn-primary btn_save" id="btn_save_email">Salvar
+                        alterações</button>
                 </div>
             </div>
         </div>
@@ -276,8 +263,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary btn_save" id="btn_save_senha"
-                        >Salvar alterações</button>
+                    <button type="button" class="btn btn-primary btn_save" id="btn_save_senha">Salvar
+                        alterações</button>
                 </div>
             </div>
         </div>
