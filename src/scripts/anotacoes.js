@@ -50,12 +50,12 @@ function salvaAnotacao(event) {
 
     // Adiciona o usuário no banco de dados
 
-    addUser(nomeValue, dateValue, fazValue, motivosValue, observacoesValue);
+    addAnotacao(nomeValue, dateValue, fazValue, motivosValue, observacoesValue);
     alert('Anotações salvas com sucesso');
 }
 
 // Associar salvamento ao botao
-document.getElementById('btn_salvar').addEventListener('click', salvaAnotacao);
+document.getElementById('btn-salvar').addEventListener('click', salvaAnotacao);
 
 // Página inicial de Anotação
 const LOGIN_URL = "anotacoes_psico.html";
@@ -155,7 +155,7 @@ function initLoginApp() {
     }
 };
 
-function addUser(nomeValue, dateValue, trabalhoValue, motivosValue, observacoesValue) {
+function addAnotacao(nomeValue, dateValue, trabalhoValue, motivosValue, observacoesValue) {
 
     // Cria um objeto de usuario para o novo usuario 
     let newId = generateUUID();
