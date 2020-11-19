@@ -154,6 +154,7 @@ function loginPsico (email, senha) {
             usuarioCorrente.valor = usuario.valor;
             usuarioCorrente.senha = usuario.senha;
             usuarioCorrente.status = usuario.status;
+            usuarioCorrente.calendario = usuario.calendario;
             // Salva os dados do usuário corrente no Session Storage, mas antes converte para string
             sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
 

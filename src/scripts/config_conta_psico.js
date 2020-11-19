@@ -178,7 +178,7 @@ function isEmail(email) {
 
 
 //coisas q vao acontecer quando a pag carregar
-$(document).ready(function () {
+$('document').ready(function () {
 
     //--------------------------------------------------- DADOS DO LOCAL STORAGE --------------------------------------------------------------------------------------------
     var db_json = localStorage.getItem('db_psico');
