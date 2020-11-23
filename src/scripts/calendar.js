@@ -96,7 +96,14 @@ function InitApp() {
                 criarData(info.dateStr);
             },
             events: data_cal,
-            selectable: true
+            selectable: true,
+            eventClick: function(info) {
+                if (confirm(`Desenha excluir a marcação ${info.event.title} ?`)) {
+                    txt = "Marcação excluida com sucesso!";
+                    info.event.remove();
+                  }
+              }
+            
 
         });
         calendar.render();
