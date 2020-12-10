@@ -5,6 +5,11 @@ body, img, h1, div, p, section
     margin: 0;
 }
 
+:focus
+{
+    outline: none !important;
+}
+
 #dash
 {
     display: flex;
@@ -17,7 +22,7 @@ body, img, h1, div, p, section
     background-color: #E4E6EC;
     position: relative;
     height: 100vh;
-    width: 432px;
+    width: 382px;
 }
 
 #sidebar_userpanel
@@ -32,24 +37,28 @@ body, img, h1, div, p, section
     /* background-color: red; */ /*test*/
     height: 128px;
     display: flex;
+    align-items: center;
     position: relative;
     padding-left: 28px;
+    padding-right: 20px;
     top: 45%;
     transform: translateY(-50%);
 }
 
 #sidebar_photoframe
 {
-    height: 128px;
-    width: 128px;
+    height: 112px;
+    width: 112px;
+    position: relative;
     border-radius: 100px;
     background-color: #1986C0;
 }
 
-#sidebar_avatar
+#sidebar_photoframe>i
 {
-    width: 60%;
-    position: relative;
+    font-size: 62px;
+    color: white;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -64,13 +73,12 @@ body, img, h1, div, p, section
 
 #sidebar_textbox
 {
-    /* background-color: aqua; */ /*test*/
+    /*background-color: aqua ; /*test*/
+    width: calc(100% - 112px);
     position: relative;
     height: 128px;
-    width: calc(100% - 128px);
     padding-top: 10px;
     padding-left: 10px;
-    padding-right: 20px;
     line-height: 1;
     
 }
@@ -78,33 +86,43 @@ body, img, h1, div, p, section
 #sidebar_username
 {
     /* background-color: purple; */ /*test*/
-    font-size: 1.6rem;
+    font-size: 22px;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
 #sidebar_userstatus
 {
-    background-color: #E4E6EC;
-    border-radius: 20px;
+    background-color: #cccdd0;
+    border-radius: 22px;
+    
     display: flex;
+    position: relative;
+    align-items: center;
     font-size: 1.3rem;
-    padding-left: 8px;
-    height: 20px;
+    padding: 0 8px;
     width: 160px;
     color: #464658;
 }
 
 #sidebar_statusicon
 {
-    height: 15px;
-    width: 15px;
-    border-radius: 100px;
+    font-size: 16px;
+    color: rgb(0, 200, 0);
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #808080; /*20ff20*/
     margin-right: 5px;
+}
+
+#sidebar_statustext
+{
+    font-size: 16px;
+    line-height: 1.6rem;
+}
+
+#sidebar_selectstatus
+{
+    position: absolute;
+    right: 8px;
 }
 
 #sidebar_message
@@ -112,12 +130,18 @@ body, img, h1, div, p, section
     /* background-color: green; */ /*test*/
     max-height: 50%;
     margin-bottom: 5px;
-    margin-right: 20px;
     position: absolute;
-    overflow: hidden;
     bottom: 0;
-    font-size: 1.3rem;
+
+    font-size: 16px;
     text-align: left;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 1rem;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 #sidebar_line
@@ -218,17 +242,17 @@ body, img, h1, div, p, section
 
 .sidebar_btn
 {
-    height: 68px;
+    height: 52px;
     width: 100%;
     margin-bottom: 16px;
     border-style: none;
     border-radius: 16px;
 }
 
-.sidebar_btn> span
+.sidebar_btn> p
 {
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: 600;
 }
 
 #sidebar_options
@@ -236,33 +260,76 @@ body, img, h1, div, p, section
     background-color: #1986C0;
 }
 
+#sidebar_options:hover
+{
+    filter: contrast(200%);
+}
+
 #sidebar_logout
 {
     border-style: solid;
     border-width: 5px;
     border-color: #FF6264;
-    background-color: #E4E6EC;
+    background-color: transparent;
 }
 
-#sidebar_options> span
+#sidebar_logout:hover
+{
+    filter: contrast(200%)
+}
+
+#sidebar_options> p
 {
     color: white;
 }
 
-#sidebar_logout> span
+#sidebar_logout> p
 {
     color: #FF6264;
 }
 
 #content
 {
-    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: calc(100% - 382px);   
 }
 
-#users_dropdown
+#content-title
 {
-    background-color: white;
-    width: 100px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 40px;
+    left: 60px;
+   
+    /* background-color: red; */
+   
+}
+
+#title-button
+{
+    display: none;
+}
+
+#content-context
+{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
     left: 50%;
-    top: 50%;
+    transform: translateX(-50%);
+    /* background-color: blue; */
+}
+
+.menu-btn
+{
+    height: 220px;
+    width: 220px;
+    background-color: #1986C0;
+    border-style: none;
+    border-radius: 12px;
+    margin: 5px;
 }
