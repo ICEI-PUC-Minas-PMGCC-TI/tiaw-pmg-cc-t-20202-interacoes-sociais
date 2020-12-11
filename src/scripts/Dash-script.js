@@ -132,7 +132,7 @@ function setStatus()
     }
 }
 
-function setContent()
+/*function setContent()
 {
     if(user.tipo= 0)
     {
@@ -166,7 +166,7 @@ function setContent()
     {
         throw new Exception("Impossível determinar o usuário!");
     }
-}
+}*/
 
 $("#sidebar_statusbar").on("click",
     function()
