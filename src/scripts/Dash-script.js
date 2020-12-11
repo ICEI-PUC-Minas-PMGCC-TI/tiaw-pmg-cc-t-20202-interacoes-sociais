@@ -59,7 +59,7 @@ initLoginApp();
 
 function initLoginApp() {
     
-    sessionStorage.removeItem('usuarioCorrente');
+    /* sessionStorage.removeItem('usuarioCorrente'); */
     let aux = sessionStorage.getItem('usuarioCorrente');
 
     if (aux)
