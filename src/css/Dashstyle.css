@@ -1,3 +1,5 @@
+/*Sidebar*/
+
 body, img, h1, div, p, section
 {
     font-family: sans-serif;
@@ -93,6 +95,12 @@ body, img, h1, div, p, section
 
 #sidebar_userstatus
 {
+    width: fit-content;
+    position: relative;
+}
+
+#sidebar_statusbar
+{
     background-color: #cccdd0;
     border-radius: 22px;
     
@@ -105,6 +113,11 @@ body, img, h1, div, p, section
     color: #464658;
 }
 
+#sidebar_statusinfo>p
+{
+    display: inline-block;
+}
+
 #sidebar_statusicon
 {
     font-size: 16px;
@@ -113,17 +126,46 @@ body, img, h1, div, p, section
     margin-right: 5px;
 }
 
+
 #sidebar_statustext
 {
     font-size: 16px;
     line-height: 1.6rem;
 }
 
-#sidebar_selectstatus
+#sidebar_selectarrow
 {
     position: absolute;
     right: 8px;
 }
+
+#sidebar_statusmenu
+{
+    display: none;
+    width: 100%;
+    margin-top: 8px;
+
+    position: absolute;
+    z-index: 1;
+    padding: 10px;
+
+    border-radius: 12px;
+    color: #464658;
+    background-color: #cccdd0;
+}
+
+#sidebar_statusmenu> ul
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar_statusmenu> ul li:not(:last-child)
+{
+    margin-bottom: 5px;
+}
+
 
 #sidebar_message
 {
@@ -288,12 +330,15 @@ body, img, h1, div, p, section
     color: #FF6264;
 }
 
+/*end-Sidebar*/
+
 #content
 {
     display: flex;
     position: relative;
     align-items: center;
-    width: calc(100% - 382px);   
+    width: calc(100% - 382px);
+    min-width: 220px;
 }
 
 #content-title
@@ -329,7 +374,27 @@ body, img, h1, div, p, section
     height: 220px;
     width: 220px;
     background-color: #1986C0;
+    position: relative;
     border-style: none;
     border-radius: 12px;
+    margin: 5px;  
+}
+
+.menu-btn:hover
+{
+    filter: contrast(200%);
+}
+
+.menu-btn>i
+{
+    font-size: 60px;
+    color: white;
+}
+
+.menu-btn>p
+{
+    position: absolute;
+    color: white;
+    bottom: 0;
     margin: 5px;
 }
