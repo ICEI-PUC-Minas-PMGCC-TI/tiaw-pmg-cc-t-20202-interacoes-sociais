@@ -42,7 +42,7 @@
             aceitarCox(0);
             document.getElementById(0).innerText = "Aguarde para novas solicitações";
             document.getElementById(3).innerText = "";
-            document.getElementById('bt1').innerText = "";
+            document.getElementById('bot1').innerHTML = ``;
             conexoes();
           }
         }
@@ -77,9 +77,11 @@
             <h3>Solicitações</h3>
               <div class="card" style="width: 18rem; display: inline;">
                 <div class="card-body">
-                  <h5 class="card-title" id="0">--</h5>
-                  <p class="card-text" id="3">--</p>
-                  <a id="bt1" class="btn btn-primary">--</a>
+                  <h5 class="card-title" id="0">No momento você não possui solicitações</h5>
+                  <p class="card-text" id="3"></p>
+                  <div id="bot1">
+                  <a id="bt1" class="btn btn-primary">Aceitar</a>
+                </div>
                 </div>
               </div>
 

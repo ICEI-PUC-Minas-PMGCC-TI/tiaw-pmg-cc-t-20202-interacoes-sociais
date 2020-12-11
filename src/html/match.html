@@ -51,7 +51,7 @@
             document.getElementById(pendentes[num]).innerText = psicosN(1); 
             document.getElementById(0).innerText = "Aguarde para novas sugestões";
             document.getElementById(3).innerText = "";
-            document.getElementById('bt1').innerText = "";
+            document.getElementById('bot1').innerHTML = ``;
           }
 
           bt2.onclick = ()=>
@@ -60,7 +60,7 @@
             document.getElementById(pendentes[num]).innerText = psicosN(2);
             document.getElementById(1).innerText = "Aguarde para novas sugestões";
             document.getElementById(4).innerText = "";
-            document.getElementById('bt2').innerText = "";
+            document.getElementById('bot2').innerHTML = ``;
           }
 
           bt3.onclick = ()=>
@@ -69,7 +69,7 @@
             document.getElementById(pendentes[num]).innerText = psicosN(3); 
             document.getElementById(2).innerText = "Aguarde para novas sugestões";
             document.getElementById(5).innerText = "";
-            document.getElementById('bt3').innerText = "";
+            document.getElementById('bot3').innerText = ``;
           }
         }
 
@@ -114,9 +114,11 @@
             <h3>Psicologos</h3>
               <div class="card" style="width: 18rem; display: inline;">
                 <div class="card-body">
-                  <h5 class="card-title" id="0">--</h5>
+                  <h5 class="card-title" id="0">No momento você não possui sugestões</h5>
                   <p class="card-text" id="3">--</p>
-                  <a id="bt1" class="btn btn-primary">--</a>
+                  <div id="bot1">
+                  <a id="bt1" class="btn btn-primary">Match</a>
+                </div>
                 </div>
               </div>
 
@@ -124,15 +126,19 @@
                 <div class="card-body">
                   <h5 class="card-title" id="1">--</h5>
                   <p class="card-text" id="4">--</p>
-                  <a id="bt2" class="btn btn-primary">MATCH</a>
+                  <div id="bot2">
+                  <a id="bt2" class="btn btn-primary">No momento você não possui sugestões</a>
+                </div>
                 </div>
               </div>
 
               <div class="card" style="width: 18rem; display: inline;">
                 <div class="card-body">
-                  <h5 class="card-title" id="2">--</h5>
+                  <h5 class="card-title" id="2">No momento você não possui sugestões</h5>
                   <p class="card-text" id="5">--</p>
-                  <a id="bt3" class="btn btn-primary">--</a>
+                  <div id="bot3">
+                  <a id="bt3" class="btn btn-primary">Match</a>
+                </div>
                 </div>
               </div>
             </div>
