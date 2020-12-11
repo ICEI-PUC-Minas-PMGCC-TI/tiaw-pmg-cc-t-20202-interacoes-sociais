@@ -20,7 +20,7 @@
     />
     <link rel="stylesheet" href="style.css" />
     <meta name="Autor" content="Christian" />
-    <script src="../scripts/match.js">
+    <script src="../scripts/matchPsi.js">
     </script>
     <script
       src="https://kit.fontawesome.com/dd6b633eba.js"
@@ -31,45 +31,19 @@
       //------SETA INFORMACOES INICIAIS SOBRE OS PSICOS RECOMENDADOS------
         onload = () => {
 
-          var pendentes=['li1','li2','li3'];
-         // let num = varPendente();
-          document.getElementById('usuario').innerText= Usuario();
+        document.getElementById('usuario').innerText= Usuario();
+        conexoes();
+        document.getElementById(0).innerText = userSolic();
+        document.getElementById(3).innerText = userSobreSolic();
           
-          for(let x=0;x<3;x++)
-          {
-            document.getElementById(x).innerText = psicosN(x+1);
-          }
-
-          for(let x=3;x<6;x++)
-          {
-            document.getElementById(x).innerText = psicosS(x-2);
-          }
-
+          
           bt1.onclick = ()=>
           {
-            let num = varPendente(0);
-            document.getElementById(pendentes[num]).innerText = psicosN(1); 
-            document.getElementById(0).innerText = "Aguarde para novas sugestões";
+            aceitarCox(0);
+            document.getElementById(0).innerText = "Aguarde para novas solicitações";
             document.getElementById(3).innerText = "";
             document.getElementById('bt1').innerText = "";
-          }
-
-          bt2.onclick = ()=>
-          {
-            let num = varPendente(1);
-            document.getElementById(pendentes[num]).innerText = psicosN(2);
-            document.getElementById(1).innerText = "Aguarde para novas sugestões";
-            document.getElementById(4).innerText = "";
-            document.getElementById('bt2').innerText = "";
-          }
-
-          bt3.onclick = ()=>
-          {
-            let num = varPendente(2);
-            document.getElementById(pendentes[num]).innerText = psicosN(3); 
-            document.getElementById(2).innerText = "Aguarde para novas sugestões";
-            document.getElementById(5).innerText = "";
-            document.getElementById('bt3').innerText = "";
+            conexoes();
           }
         }
 
@@ -92,26 +66,15 @@
                 Suas conexões
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Sem conexão</li>
-                <li class="list-group-item">Sem conexão</li>
-                <li class="list-group-item">Sem conexão</li>
-              </ul>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-              <div class="card-header">
-                Solicitações pendentes
-              </div>
-              <ul class="list-group list-group-flush">
-                <li id="li1" class="list-group-item"></li>
-                <li id="li3" class="list-group-item"></li>
-                <li id="li2" class="list-group-item"></li>
+                <li id="conx1" class="list-group-item">Sem conexão</li>
+                <li id="conx2" class="list-group-item">Sem conexão</li>
+                <li id="conx3" class="list-group-item">Sem conexão</li>
               </ul>
             </div>
           </div>
 
           <div class="card col-4" style="align-items: center; margin-left: 200px;">
-            <h3>Psicologos</h3>
+            <h3>Solicitações</h3>
               <div class="card" style="width: 18rem; display: inline;">
                 <div class="card-body">
                   <h5 class="card-title" id="0">--</h5>
@@ -120,22 +83,7 @@
                 </div>
               </div>
 
-              <div class="card" style="width: 18rem; display: inline;">
-                <div class="card-body">
-                  <h5 class="card-title" id="1">--</h5>
-                  <p class="card-text" id="4">--</p>
-                  <a id="bt2" class="btn btn-primary">MATCH</a>
-                </div>
-              </div>
-
-              <div class="card" style="width: 18rem; display: inline;">
-                <div class="card-body">
-                  <h5 class="card-title" id="2">--</h5>
-                  <p class="card-text" id="5">--</p>
-                  <a id="bt3" class="btn btn-primary">--</a>
-                </div>
-              </div>
-            </div>
+              
         </div>
         
     </main>
