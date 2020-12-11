@@ -25,15 +25,24 @@
 
                     <div id="sidebar_textbox">
                         <p id="sidebar_username">
-                            Nome do Usuário
                         </p>
                         <div id="sidebar_userstatus">
-                            <i id="sidebar_statusicon" class="fas fa-check-circle"></i>
-                            <p id="sidebar_statustext">Status</p>
-                            <i id="sidebar_selectstatus" class="fas fa-angle-down"></i>
+                            <div id="sidebar_statusbar">
+                                <div id="sidebar_statusinfo">
+                                    <i id="sidebar_statusicon" class="fas fa-check-circle"></i>
+                                    <p id="sidebar_statustext">Online</p>
+                                </div>
+                                <i id="sidebar_selectarrow" class="fas fa-angle-down"></i>
+                            </div>
+                            <div id="sidebar_statusmenu">
+                                <ul>
+                                    <li>Online</li>
+                                    <li>Ocupado</li>
+                                    <li>Offline</li>
+                                </ul>
+                            </div>
                         </div>
                         <p id="sidebar_message">
-                            "Recado do usuário!"
                         </p>
                     </div>
                 </div>
@@ -108,12 +117,8 @@
                     </div>
             </section> -->
 
-            <!-- <button id="btn_calendar" class="sidebar_btn">
-                <a href="calendar.html"><span>Calendário</span></a> 
-            </button> -->
-
             <section id="sidebar_controlbuttons">
-                <a href="calendar.html">
+                <!-- <a href="calendar.html">
                 <button id="sidebar_options" class="sidebar_btn">
                     <p>Calendário</p>
                 </button>
@@ -122,13 +127,17 @@
                 <button id="sidebar_options" class="sidebar_btn">
                     <p>Anotações</p>
                 </button>
-                </a>
+                </a> -->
+                <a href="#">
                 <button id="sidebar_options" class="sidebar_btn">
                     <p>Opções</p>
                 </button>
+                </a>
+                <a href="../template/index.html">
                 <button id="sidebar_logout" class="sidebar_btn">
                     <p>Sair</p>
                 </button>
+                </a>
             </section>
 
         </section>
@@ -140,9 +149,17 @@
             </div>
 
             <nav id="content-context">
-                <button id="searchpsy" class="menu-btn"></button>
-                <button id="mypsy" class="menu-btn"></button>
-            </nav>
+                
+                <!-- <button id="searchpsy" class="menu-btn">
+                    <i class="fas fa-search"></i>
+                    <p>Procurar indicações</p>
+                </button>
+
+                <button id="mypsy" class="menu-btn">
+                    <i class="fas fa-hand-holding-medical"></i>
+                    <p>Meus Psicólogos</p>
+                </button>
+            </nav> -->
         </section>
     </div>
 
