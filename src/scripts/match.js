@@ -71,7 +71,7 @@ function procID(ind)
     let idTemp;
     for(let x=0; x<db_user.data.length; x++)
     {
-        if(db_user.data[x].id == ind)
+        if(db_psico.data[x].id == ind)
         {
             idTemp=x;
         }
@@ -102,4 +102,16 @@ function userSolic()
 function userSobreSolic()
 {
     return db_user.data[procID(ids.data[0].solicitante)].sobre;
+}
+
+
+function conexoes()
+{ 
+    let conect;
+    if(JSON.parse(localStorage.getItem('conex')) != null)
+    {
+        conect = JSON.parse(localStorage.getItem('conex')) ; 
+        document.getElementById('conx1').innerText = db_psico.data[procID(conect.data[0].psicologo)].nome;;
+    }
+    
 }
