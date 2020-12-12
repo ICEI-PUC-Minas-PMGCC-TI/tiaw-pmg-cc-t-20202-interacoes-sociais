@@ -30,7 +30,9 @@ function Usuario()
 function psicosN(idNome)
 {
     if(db_psico.data[idNome]!=null)
-    return db_psico.data[idNome].nome;
+    {
+         return db_psico.data[idNome].nome;   
+    }
     else
     {
         document.getElementById('bot3').innerHTML = ``;
@@ -122,5 +124,16 @@ function conexoes()
         conect = JSON.parse(localStorage.getItem('conex')) ; 
         document.getElementById('conx1').innerText = db_psico.data[procID(conect.data[0].psicologo)].nome;;
     }
+
     
+    for(let x=0;x<3;x++)
+          {
+            document.getElementById(x).innerText = psicosN(x+1);
+          }
+
+    for(let x=3;x<6;x++)
+          {
+            document.getElementById(x).innerText = psicosS(x-2);
+          }
+
 }
