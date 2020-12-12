@@ -22,6 +22,7 @@
     <meta name="Autor" content="Christian" />
     <script src="../scripts/match.js">
     </script>
+   
     <script
       src="https://kit.fontawesome.com/dd6b633eba.js"
       crossorigin="anonymous"
@@ -30,7 +31,7 @@
     <script>
       //------SETA INFORMACOES INICIAIS SOBRE OS PSICOS RECOMENDADOS------
         onload = () => {
-
+          conexoes();
           var pendentes=['li1','li2','li3'];
          // let num = varPendente();
           document.getElementById('usuario').innerText= Usuario();
@@ -92,9 +93,9 @@
                 Suas conexões
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Sem conexão</li>
-                <li class="list-group-item">Sem conexão</li>
-                <li class="list-group-item">Sem conexão</li>
+                <li id="conx1" class="list-group-item">Sem conexão</li>
+                <li id="conx2" class="list-group-item">Sem conexão</li>
+                <li id="conx3" class="list-group-item">Sem conexão</li>
               </ul>
             </div>
 
