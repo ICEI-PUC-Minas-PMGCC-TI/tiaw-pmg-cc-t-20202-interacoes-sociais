@@ -64,6 +64,7 @@ function aceitarCox(indice)
 
 function userSolic()
 {
+    
     return db_user.data[procID(ids.data[0].solicitante)].nome;
 }
 
@@ -80,6 +81,9 @@ function conexoes()
         conect = JSON.parse(localStorage.getItem('conex')) ; 
         document.getElementById('conx1').innerText = db_user.data[procID(conect.data[0].paciente)].nome;;
     }
+
+    if(JSON.parse(localStorage.getItem('db_solic')) == null)
+    document.getElementById('bot1').innerHTML = ``;
     
 }
 

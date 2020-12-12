@@ -29,12 +29,21 @@ function Usuario()
 
 function psicosN(idNome)
 {
+    if(db_psico.data[idNome]!=null)
     return db_psico.data[idNome].nome;
+    else
+    {
+        document.getElementById('bot3').innerHTML = ``;
+        return "Sem Sugestões no momento";
+    }
 }
 
 function psicosS(idNome)
-{
+{   
+    if(db_psico.data[idNome]!=null)
     return db_psico.data[idNome].sobre;
+    else
+    return "";
 }
 
 function varPendente(id)
