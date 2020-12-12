@@ -58,6 +58,7 @@ function aceitarCox(indice)
 
     conex.data.push(aceite);
     localStorage.setItem('conex',JSON.stringify(conex));
+    localStorage.removeItem('db_solic');
 
 }
 
