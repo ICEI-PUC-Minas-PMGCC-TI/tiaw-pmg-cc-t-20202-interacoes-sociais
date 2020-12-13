@@ -12,16 +12,11 @@ body, img, h1, div, p, section
     outline: none !important;
 }
 
-a:hover
-{
-    text-decoration: none;
-}
-
 #dash
 {
     display: flex;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 
 #sidebar
@@ -93,7 +88,6 @@ a:hover
 #sidebar_username
 {
     /* background-color: purple; */ /*test*/
-    display: inline-block;
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 5px;
@@ -107,7 +101,6 @@ a:hover
 
 #sidebar_statusbar
 {
-    height: 24px;
     background-color: #cccdd0;
     border-radius: 22px;
     
@@ -120,6 +113,11 @@ a:hover
     color: #464658;
 }
 
+#sidebar_statusinfo>p
+{
+    display: inline-block;
+}
+
 #sidebar_statusicon
 {
     font-size: 16px;
@@ -128,11 +126,11 @@ a:hover
     margin-right: 5px;
 }
 
+
 #sidebar_statustext
 {
     font-size: 16px;
     line-height: 1.6rem;
-    display: inline-block;
 }
 
 #sidebar_selectarrow
@@ -165,7 +163,7 @@ a:hover
 
 #sidebar_statusmenu> ul li:not(:last-child)
 {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 
@@ -304,11 +302,6 @@ a:hover
     background-color: #1986C0;
 }
 
-#sidebar_options>i
-{
-    color: white;
-}
-
 #sidebar_options:hover
 {
     filter: contrast(200%);
@@ -320,11 +313,6 @@ a:hover
     border-width: 5px;
     border-color: #FF6264;
     background-color: transparent;
-}
-
-#sidebar_logout>i
-{
-    color: #FF6264
 }
 
 #sidebar_logout:hover
@@ -350,6 +338,7 @@ a:hover
     position: relative;
     align-items: center;
     width: calc(100% - 382px);
+    min-width: 220px;
 }
 
 #content-title
@@ -360,7 +349,8 @@ a:hover
     top: 40px;
     left: 60px;
    
-    /* background-color: red; */   
+    /* background-color: red; */
+   
 }
 
 #title-button
@@ -376,6 +366,7 @@ a:hover
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    /* background-color: blue; */
 }
 
 .menu-btn
@@ -386,7 +377,7 @@ a:hover
     position: relative;
     border-style: none;
     border-radius: 12px;
-    margin: 5px;
+    margin: 5px;  
 }
 
 .menu-btn:hover
@@ -406,235 +397,4 @@ a:hover
     color: white;
     bottom: 0;
     margin: 5px;
-}
-
-
-/* Small */
-@media screen and (max-width: 767px)
-{
-
-    #dash
-    {
-        height: 100vh;
-        width: 100vw;
-    }
-
-    #sidebar
-    {
-        display: flex;
-        justify-content: space-between;
-        position: absolute;
-        background-color: #E4E6EC;
-
-        height: 92px;
-        width: 100%;
-        bottom: 0;
-
-        padding: 0px 10px;
-        
-    }
-
-    #sidebar_userpanel
-    {
-        height: 100%;
-        width: fit-content;
-
-        padding: 0;
-        margin: 0;
-
-        background-color: transparent; 
-    }
-
-    #sidebar_usercontext
-    {
-        height: fit-content;
-        width: fit-content;
-        margin: 0;
-        padding: 0; 
-
-        display: flex;
-        align-items: center;
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-
-        box-sizing: border-box;
-        /* background-color: green; */
-    }
-
-    #sidebar_photoframe
-    {
-        height: calc(80px - 10px);
-        width: calc(80px - 10px);
-        padding: 0;
-        margin: 0;
-    }
-
-    #sidebar_photoframe>i
-    {
-        font-size: 42px;
-    }
-
-    #sidebar_textbox
-    {
-        height: calc(80px - 10px);
-        width: calc(100% - 80px + 10px);
-        position: relative;
-        padding-top: 0;
-        padding-left: 5px;
-        line-height: 1;
-        
-        /* background-color: greenyellow; */
-    }
-
-    #sidebar_userstatus
-    {
-        width: fit-content;
-        position: absolute;
-        bottom: 5px;
-        /* background-color: red; */
-    }
-
-    #sidebar_selectarrow
-    {
-        /* background-color: hotpink; */
-        transform: rotate(180deg)
-    }
-    
-    #sidebar_statusbar
-    {
-        width: fit-content;
-    }
-
-    #sidebar_statusinfo>i
-    {
-        margin-right: 20px;
-    }
-
-    #sidebar_statustext
-    {
-        display: none;
-    }
-
-    #sidebar_message
-    {
-        display: none;
-    }
-
-    #sidebar_statusmenu
-    {
-        display: none;
-        width: 150px;
-        margin-top: 0px;
-        top: -8px;
-
-        position: absolute;
-        z-index: 1;
-        padding: 10px;
-
-        border-radius: 12px;
-        color: #464658;
-        background-color: #cccdd0;
-
-        transform: translateY(-100%);
-    }
-
-    #sidebar_statusmenu>ul li
-    {
-        position: relative;
-        /* background-color: red; */
-    }
-
-    #sidebar_statusmenu> ul li:not(:last-child)
-    {
-        margin-bottom: 25px;
-    }
-
-    #sidebar_line
-    {
-        display: none;
-    }
-
-    #sidebar_controlbuttons
-    {
-        display: flex;
-        height: fit-content;
-        width: fit-content;
-
-        position: relative;
-        
-        top: 50%;
-        bottom: unset;
-
-        transform: translateY(-50%);
-        
-        margin-bottom: 0px;
-        padding-left: 0px;
-        padding-right: 0px;
-       /*  background-color: purple; */
-    }
-
-    .sidebar_btn
-    {
-        height: 50px;
-        width: 50px;
-        padding: 0;
-        margin: 0;
-        border-style: none;
-        border-radius: 12px;
-    }
-
-    #content
-    {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        z-index: -1;
-        
-        height: calc(100% - 92px);
-        width: 100%;
-
-        /* background-color: teal; */
-    }
-
-    #content-context
-    {
-        display: block;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-
-        /* background-color: teal; */
-    }
-
-    .menu-btn
-    {
-        height: 120px;
-        width: 120px;
-        background-color: #1986C0;
-        position: relative;
-        border-style: none;
-        border-radius: 12px;
-        margin: 5px;
-        margin-bottom: 25px;
-    }
-
-    .menu-btn>i
-    {
-        font-size: 50px;
-        color: white;
-    }
-
-    .menu-btn>p
-    {   
-        top: 100%;
-        bottom: 0;
-        margin: 5px;
-
-        font-size: 20px;
-        line-height: 1;
-        position: absolute;
-        color: #1986C0;
-        
-    }
 }
