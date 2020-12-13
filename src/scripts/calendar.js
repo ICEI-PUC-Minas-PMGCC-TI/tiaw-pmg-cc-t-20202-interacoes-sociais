@@ -55,8 +55,7 @@ function InitApp() {
 
     var db_json = localStorage.getItem('db_psico');
     var db_json_ss = sessionStorage.getItem('usuarioCorrente');
-    if(db_json_ss)
-    {
+    if (db_json_ss) {
         usuarioCorrente = JSON.parse(db_json_ss);
     }
 
@@ -76,7 +75,7 @@ function InitApp() {
 
     //acha o index no banco de dados cujo ID é o do usuario selecionado
     let user_dados_index = db_psico.data.findIndex(x => x.id == user_id);
-    
+
     console.log(user_dados_index);
     console.log(db_psico.data[user_dados_index].calendario);
     console.log(usuarioCorrente.calendario);
@@ -95,13 +94,24 @@ function InitApp() {
             },
             events: data_cal,
             selectable: true,
-            eventClick: function(info) {
+            eventClick: function (info) {
                 if (confirm(`Desenha excluir a marcação ${info.event.title} ?`)) {
                     txt = "Marcação excluida com sucesso!";
                     info.event.remove();
-                  }
-              }
-            
+                    let deletar = db_psico.data[user_dados_index].calendario.findIndex(x => x.title == info.event.title /* && x.start == info.event.start */);
+                    console.log(deletar);
+                    db_psico.data[user_dados_index].calendario[deletar];
+                    /* db_psico.data[user_dados_index].calendario[deletar].start = ""; */
+                    console.log(db_psico.data[user_dados_index].calendario[deletar].start);
+                    db_psico.data[user_dados_index].calendario[deletar].start = "";
+                    usuarioCorrente.calendario[deletar].start = "";
+                    console.log(usuarioCorrente.calendario[deletar].start);
+                    console.log(db_psico.data[user_dados_index].calendario[deletar].start);
+                    localStorage.setItem('db_psico', JSON.stringify(db_psico));
+                    sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
+                }
+            }
+
 
         });
         calendar.render();
@@ -179,16 +189,16 @@ function InitApp() {
             sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
 
             draw_calendar(usuarioCorrente.calendario);
-            
+
         })
 
 
-        
+
     }
 
 
 
-    
+
 
 }
 
