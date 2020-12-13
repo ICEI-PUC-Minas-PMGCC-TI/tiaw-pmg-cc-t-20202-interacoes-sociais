@@ -1,4 +1,4 @@
-function leDados() {
+/* function leDados() {
     let strDados = localStorage.getItem('db');
     let objDados = {};
 
@@ -45,7 +45,32 @@ function leDados() {
     }
 
     return objDados;
+} */
+
+var db_psico = {};
+
+var usuarioCorrente = {};
+
+const dadosIniciais = {
+    "data": [
+        {
+            "id": 1,
+            "nome": "Leanne",
+            "sobrenome": "Graham",
+            "cep": "51346587",
+            "anonimato": "Sim",
+            "email": "Sincere@april.biz",
+            "celular": "1-770-736-8031",
+            "sobre": "hildegard.org",
+            "sobre_job": "hildegard.org",
+            "valor": "gratuito",
+            "senha": "Leanne",
+            "status": "",
+            "anotacoes": []
+        }
+    ]
 }
+
 
 function salvaDados(dados) {
     localStorage.setItem('db', JSON.stringify(dados));
@@ -53,7 +78,7 @@ function salvaDados(dados) {
 
 function incluirContato() {
     // Ler os dados do localStorage
-    let objDados = leDados();
+    let dadosIniciais = leDados();
 
     // Incluir um novo contato
     let strNome = document.getElementById('campoNome').value;
