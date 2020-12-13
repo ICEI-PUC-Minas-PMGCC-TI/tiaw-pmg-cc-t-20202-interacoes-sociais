@@ -61,16 +61,17 @@ function initLoginApp() {
     
     /* sessionStorage.removeItem('usuarioCorrente'); */
     let aux = sessionStorage.getItem('usuarioCorrente');
-
+    
     if (aux)
     {
         user = JSON.parse(aux);
-        console.log(user);
+        console.log("get");
     }
     else
     {
         user = JSON.parse(usertest);
         sessionStorage.setItem('usuarioCorrente', usertest);
+        console.log("set");
     }
 };
 
@@ -83,21 +84,38 @@ function setSidebar()
 {
     setName();
     setStatus();
-    setContent();
+    toggleControlOnResize();
+    //setContent();
 }
 
 function setName()
 {
-    let fontsize= 22;
     $("#sidebar_username").html(user.nome+' '+user.sobrenome);
+    resizeUsername();
+    $("#sidebar_message").html("\""+user.recado+"\"");
+}
 
-    while($("#sidebar_username").height()> 22)
+function resizeUsername()
+{
+    let fontsize= 22;
+    let aux= fontsize;
+
+    if($(document).width()<= 400)
     {
-        fontsize-= 1;
-        $("#sidebar_username").css("font-size", fontsize);
+        fontsize= 18;
     }
 
-    $("#sidebar_message").html("\""+user.recado+"\"");
+    while($("#sidebar_username").height()> fontsize)
+    {
+        aux-= 1;
+        $("#sidebar_username").css("font-size", aux);
+    }
+
+    while($("#sidebar_username").height()< fontsize)
+    {
+        aux+= 1;
+        $("#sidebar_username").css("font-size", aux);
+    }
 }
 
 function setStatus()
@@ -131,6 +149,21 @@ function setStatus()
         throw new Exception("Impossível determinar status!");
     }
 }
+
+function toggleControlOnResize()
+{
+    if($(document).width()<767)
+    {
+        $("#sidebar_options").html(`<i class="fas fa-cog"></i>`);
+        $("#sidebar_logout").html(`<i class="fas fa-sign-out-alt"></i>`);
+    }
+    else
+    {
+        $("#sidebar_options").html(`<p>Opções</p>`);
+        $("#sidebar_logout").html(`<p>Sair</p>`);
+    }
+}
+
 
 /*function setContent()
 {
@@ -183,11 +216,25 @@ $("#sidebar_statusmenu>ul li").each(
             function()
             {
                 user.status= i;
+                console.log(i);
                 setStatus();
                 saveUser();
-                $("#sidebar_statusmenu").css("display","none");
             }
         )
+    }
+)
+
+$(window).resize(resizeUsername)
+
+$(window).resize(toggleControlOnResize)
+
+$(document).click(
+    function(evt)
+    {
+        if(!(evt.target.id == "sidebar_userstatus" || evt.target.id == "sidebar_statusbar" ||
+            evt.target.id == "sidebar_statusinfo" || evt.target.id == "sidebar_statusicon" ||
+                evt.target.id == "sidebar_statustext" || evt.target.id == "sidebar_selectarrow"))
+        $("#sidebar_statusmenu").css("display","none");
     }
 )
 
