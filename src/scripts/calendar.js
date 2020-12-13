@@ -18,9 +18,7 @@ const dadosIniciais = {
             "valor": "gratuito",
             "senha": "Leanne",
             "status": "",
-            "calendar": [
-                
-            ]
+            "calendar": []
         }
     ]
 }
