@@ -211,9 +211,6 @@ section .imagem-card{
     width: 60px;
 }
 
-.botaoresponsivo{
-    margin-left: 170%;
-}
 
 @media screen and (max-width: 767px){
         .logo-footer{
