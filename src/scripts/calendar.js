@@ -98,15 +98,10 @@ function InitApp() {
                 if (confirm(`Desenha excluir a marcação ${info.event.title} ?`)) {
                     txt = "Marcação excluida com sucesso!";
                     info.event.remove();
-                    let deletar = db_psico.data[user_dados_index].calendario.findIndex(x => x.title == info.event.title /* && x.start == info.event.start */);
-                    console.log(deletar);
+                    let deletar = db_psico.data[user_dados_index].calendario.findIndex(x => x.title == info.event.title);
                     db_psico.data[user_dados_index].calendario[deletar];
-                    /* db_psico.data[user_dados_index].calendario[deletar].start = ""; */
-                    console.log(db_psico.data[user_dados_index].calendario[deletar].start);
                     db_psico.data[user_dados_index].calendario[deletar].start = "";
                     usuarioCorrente.calendario[deletar].start = "";
-                    console.log(usuarioCorrente.calendario[deletar].start);
-                    console.log(db_psico.data[user_dados_index].calendario[deletar].start);
                     localStorage.setItem('db_psico', JSON.stringify(db_psico));
                     sessionStorage.setItem('usuarioCorrente', JSON.stringify(usuarioCorrente));
                 }
