@@ -159,7 +159,7 @@ function toggleControlOnResize()
     }
     else
     {
-        $("#sidebar_options").html(`<p>Opções</p>`);
+        $("#sidebar_options").html(`<p>Configurar Conta</p>`);
         $("#sidebar_logout").html(`<p>Sair</p>`);
     }
 }
