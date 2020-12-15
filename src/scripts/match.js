@@ -29,7 +29,11 @@ ids = JSON.parse(localStorage.getItem('db_solic'));
 
 function Usuario()
 {
-    return usuarioCorrente.nome;
+    if(JSON.parse(sessionStorage.getItem('usuarioCorrente'))!=null)
+    {
+        return usuarioCorrente.nome;
+    }
+    return "Você pulou algumas etapas, tipo fazer o login"
 }
 
 function psicosN(idNome)
