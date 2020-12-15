@@ -289,20 +289,23 @@ function setMsgBoxError(i)
     }
 }
 
-document.getElementById('btn-sendmsg').onclick= () =>
+function setEvent()
 {
-    let txt= writingbox.value;
-    
-    if(cv!= null)
+    document.getElementById('btn-sendmsg').onclick= () =>
     {
-        /* console.log(cv); */
-        cv.msgs.push(new Msg(user.id, Date.now(), txt));
-        localStorage.setItem('db_chatmsg', JSON.stringify(db_chatmsg));
+        let txt= writingbox.value;
+        
+        if(cv!= null)
+        {
+            /* console.log(cv); */
+            cv.msgs.push(new Msg(user.id, Date.now(), txt));
+            localStorage.setItem('db_chatmsg', JSON.stringify(db_chatmsg));
+        }
+
+        writingbox.value= '';
+
+        setMsgBox();
     }
-
-    writingbox.value= '';
-
-    setMsgBox();
 }
 
 getUser();
@@ -312,4 +315,5 @@ getChatDB();
 window.onload= function(){
     setUserPanel();
     setChatWindow();
+    setEvent();
 }
