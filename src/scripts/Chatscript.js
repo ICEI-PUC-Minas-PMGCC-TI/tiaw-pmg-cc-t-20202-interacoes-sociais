@@ -190,7 +190,7 @@ function getCv()
             }
         });
     
-
+        
         if(cv== null)//Cria uma nova conversa
         {
             db_chatmsg.conversations.push(new Cv(user.id, chating_user.id,[]));
@@ -313,7 +313,6 @@ getChatingUser();
 getChatDB();
 
 window.onload= function(){
-    setUserPanel();
     setChatWindow();
     setEvent();
 }
